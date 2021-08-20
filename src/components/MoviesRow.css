@@ -1,0 +1,39 @@
+.row {
+    margin-left: 20px
+}
+
+.row-movies {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 20px
+}
+
+.row-movies::-webkit-scrollbar {
+    display: none;
+}
+
+.poster {
+    object-fit: contain;
+    width: 100%;
+    max-height: 100px;
+    transition: transform 450ms;
+    margin-right: 10px
+}
+
+.poster:hover {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+.row-poster-large {
+    max-height: 250px
+}
+
+.row-poster-large:hover {
+    transform: scale(1.09)
+}
+
+.net-title {
+    color: white
+}
