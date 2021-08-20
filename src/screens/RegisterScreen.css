@@ -1,0 +1,10 @@
+.register-logo {
+    position: fixed;
+    left: 0;
+    width: 150px;
+}
+
+.RegisterScreen {
+    position: relative;
+    height: 100%
+}
