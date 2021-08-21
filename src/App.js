@@ -1,10 +1,14 @@
 import React, {useEffect} from 'react';
-import HomeScreen from './screens/HomeScreen';
-import RegisterScreen from './screens/RegisterScreen';
 import  {BrowserRouter, Route, Switch} from 'react-router-dom';
 import { auth } from './firebase';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout, login, selectUser } from './features/userSlice';
+
+
+// screens / app pages
+import HomeScreen from './screens/HomeScreen';
+import RegisterScreen from './screens/RegisterScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 function App() {
     const user = useSelector(selectUser) || null;
@@ -24,7 +28,7 @@ function App() {
 
             } else {
                 //log out
-                dispatch(logout);
+                dispatch(logout());
             }
         })
         //equalivent to saying when it cleans up run the function ie)
@@ -35,7 +39,7 @@ function App() {
          * which saves computing power and boosts performance
         */
         return unsubscribe
-    },[])
+    },[dispatch])
 
     console.log(user);
 
@@ -47,6 +51,7 @@ function App() {
                     <RegisterScreen />
                 ) : (
                         <Switch>
+                            <Route path='/profile' render={() => <ProfileScreen />}/>
                             <Route exact path='/' render={(() => <HomeScreen />)} />
                         </Switch>
                 )}             
