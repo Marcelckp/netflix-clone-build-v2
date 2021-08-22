@@ -16,7 +16,7 @@ function ProfileScreen() {
             <div className="profileS-body">
                 <h1>Edit Profile</h1>
                 <div className="profileS-inform">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Netflix Profile Photo" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Netflix Profile" />
                     <div className="profileS-details">
                         <h2>{user.email}</h2>
                         <div className="profileS-subscribe">

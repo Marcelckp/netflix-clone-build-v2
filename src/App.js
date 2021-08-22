@@ -10,6 +10,9 @@ import HomeScreen from './screens/HomeScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import ProfileScreen from './screens/ProfileScreen';
 
+//components
+import Footer from './components/Footer'
+
 function App() {
     const user = useSelector(selectUser) || null;
     const dispatch = useDispatch()
@@ -19,7 +22,7 @@ function App() {
         const unsubscribe = auth.onAuthStateChanged( user => {
             if (user) {
                 //logged in
-                console.log(user);
+                // console.log(user);
                                 
                 dispatch(login({              //
                     uid: user.uid,           //  redux login 
@@ -50,10 +53,13 @@ function App() {
                 {!user ? (
                     <RegisterScreen />
                 ) : (
+                    <>
                         <Switch>
-                            <Route path='/profile' render={() => <ProfileScreen />}/>
-                            <Route exact path='/' render={(() => <HomeScreen />)} />
+                            <Route path='/profile' render={() => <ProfileScreen />} />
+                            <Route exact path='/' render={() => <HomeScreen />} />
                         </Switch>
+                        <Footer />
+                    </>
                 )}             
             </BrowserRouter>
         </div>

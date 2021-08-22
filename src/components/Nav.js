@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, NavLink } from 'react-router-dom';
 import './Nav.css';
 
 function Nav() {
@@ -9,15 +9,13 @@ function Nav() {
     const history = useHistory();
     
     const transitionNavBar = () => {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                handleShow(true);
-            } else handleShow(false);
-        })
+        if (window.scrollY > 100) {
+            handleShow(true);
+        } else handleShow(false);
     }
 
     useEffect(() => {
-        window.removeEventListener('scroll', transitionNavBar);
+        window.addEventListener('scroll', transitionNavBar);
         return () => window.removeEventListener('scroll', transitionNavBar);
     }, []);
 
@@ -25,8 +23,14 @@ function Nav() {
         <div className={`nav ${show && 'nav-black'}`}>
             <img 
                 onClick={() => history.push('/')}
-                className='Nav-logo' src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" alt="Netflix logo" />
+                className='Nav-logo' src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="Netflix logo" />
+            <h1><NavLink exact to='/' className='nav-link'  activeClassName='activeNav' onClick={() => history.push('/')}>Home</NavLink></h1>
 
+            <h1><NavLink to='TV-Shows' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/TV-Shows')}>TV Shows</NavLink></h1>
+
+            <h1><NavLink to='Movies' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/Movies')}>Movies</NavLink></h1>
+
+            <h1><NavLink to='New&Popular' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/New&Popular')}>New & Popular</NavLink></h1>
             <img 
                 onClick={() => history.push('/profile')}
                 className='nav-avatar'
