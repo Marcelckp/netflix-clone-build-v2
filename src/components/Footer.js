@@ -19,16 +19,16 @@ function Footer() {
             </div>
             <ul className="Footer-link-container">
                 <li className='footer-wrapper'><a href="/faq" className='footer-link'>FAQ</a></li>
-                <li className='footer-wrapper'><a href="" className='footer-link'>Audio and Subtitles</a></li>
-                <li className='footer-wrapper'><a href="" className='footer-link'>Privacy</a></li>
-                <li className='footer-wrapper'><a href="" className='footer-link'>* Contact Me *</a></li>
-                <li className='footer-wrapper'><a href="" className='footer-link'>Audio Description</a></li>
-                <li className='footer-wrapper'><a href="" className='footer-link'>Investor Relations</a></li>
-                <li className='footer-wrapper'><a href="" className='footer-link'>Legal Notice</a></li>
-                <li className='footer-wrapper'><a href="" className='footer-link'>HelpCenter</a></li>
-                <li className='footer-wrapper'><a href="" className='footer-link'>Jobs</a></li>
-                <li className='footer-wrapper'><a href="" className='footer-link'>Cookie Preferences</a></li>
-                <li className='footer-wrapper'><a href="" className='footer-link'>Gift Cards</a></li>
+                <li className='footer-wrapper'><a href="/" className='footer-link'>Audio and Subtitles</a></li>
+                <li className='footer-wrapper'><a href="/" className='footer-link'>Privacy</a></li>
+                <li className='footer-wrapper'><a href="/contactme" className='footer-link'>* Contact Me *</a></li>
+                <li className='footer-wrapper'><a href="/" className='footer-link'>Audio Description</a></li>
+                <li className='footer-wrapper'><a href="/" className='footer-link'>Investor Relations</a></li>
+                <li className='footer-wrapper'><a href="/" className='footer-link'>Legal Notice</a></li>
+                <li className='footer-wrapper'><a href="/" className='footer-link'>HelpCenter</a></li>
+                <li className='footer-wrapper'><a href="/" className='footer-link'>Jobs</a></li>
+                <li className='footer-wrapper'><a href="/" className='footer-link'>Cookie Preferences</a></li>
+                <li className='footer-wrapper'><a href="/" className='footer-link'>Gift Cards</a></li>
                 <li className='footer-wrapper'><a href="/terms" className='footer-link'>Terms of Use</a></li>
             </ul>
             <h3>Service Code</h3>

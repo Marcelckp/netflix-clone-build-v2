@@ -26,9 +26,9 @@ function Nav() {
                 className='Nav-logo' src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="Netflix logo" />
             <h1><NavLink exact to='/' className='nav-link'  activeClassName='activeNav' onClick={() => history.push('/')}>Home</NavLink></h1>
 
-            <h1><NavLink to='TV-Shows' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/TV-Shows')}>TV Shows</NavLink></h1>
+            <h1><NavLink to='TV-Shows' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/faq')}>F&Q</NavLink></h1>
 
-            <h1><NavLink to='Movies' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/Movies')}>Movies</NavLink></h1>
+            <h1><NavLink to='Movies' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/contactme')}>Contact Me</NavLink></h1>
 
             <h1><NavLink to='New&Popular' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/New&Popular')}>New & Popular</NavLink></h1>
             <img 

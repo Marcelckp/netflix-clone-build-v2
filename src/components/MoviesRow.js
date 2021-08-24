@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './MoviesRow.css'
+import MovieDash from './MovieDash';
 
 const posterBase = 'https://image.tmdb.org/t/p/original/'
 
@@ -9,7 +10,8 @@ class MovieRow extends React.Component {
     constructor() {
         super()
         this.state = {
-            movies:[]
+            movies:[],
+            clickedMovie: null
         }
     }
 
@@ -20,20 +22,32 @@ class MovieRow extends React.Component {
             })
     }
 
+
     render () {
-    // console.log(this.state.movies)
+
+        const handleClicked = (movie) => {
+            if (this.state.clickedMovie && movie === this.state.clickedMovie) {
+                this.setState({clickedMovie: null})
+            } else {
+                this.setState({clickedMovie: movie})
+            }
+        }
+
+        // console.log(this.state.clickedMovie)
         return ( 
         <div className='row'>
             <h2 className='net-title'>{this.props.title}</h2>
             <div className='row-movies'>
                 {this.state.movies.map((movie) => {
-                    return <img 
-                                className={`poster ${this.props.originalsRow && 'row-poster-large'}`}
-                                src={`${posterBase}${this.props.originalsRow ? movie.poster_path : movie.backdrop_path}`} 
-                                alt={movie.name} 
-                                key={movie.id} />
+                    if (this.props.originalsRow && movie.poster_path || !this.props.originalsRow && movie.backdrop_path) return ( <img 
+                                            className={`poster ${this.props.originalsRow && 'row-poster-large'}`}
+                                            src={`${posterBase}${this.props.originalsRow ? movie.poster_path : movie.backdrop_path}`} 
+                                            alt={movie.name} 
+                                            onClick={() => handleClicked(movie)}
+                                            key={movie.id} />)
                 })}
             </div>
+            {this.state.clickedMovie ? <MovieDash movie={this.state.clickedMovie} /> : null}
         </div>
         )
         }

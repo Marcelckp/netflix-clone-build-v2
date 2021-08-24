@@ -1,0 +1,17 @@
+.movieDash {
+    background-color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    height: 500px
+}
+
+.movieDashInfo {
+    position: relative;
+    left: 50px;
+    margin-right: 700px;
+    padding-top: 40px;
+    padding-left: 10px;
+    color: white;
+    font-size: 16px;
+}

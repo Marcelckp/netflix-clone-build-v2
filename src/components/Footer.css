@@ -32,7 +32,7 @@
     font-size: 14px;
     margin-top: 20px;
     margin-left: 40px;
-    margin-right: 701px;
+    max-width: 87px;
     padding: 8px;
     border: 1px solid rgb(185, 184, 184);
 }

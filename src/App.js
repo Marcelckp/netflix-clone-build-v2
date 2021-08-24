@@ -9,6 +9,7 @@ import { logout, login, selectUser } from './features/userSlice';
 import HomeScreen from './screens/HomeScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import FAQ from './screens/faqform.js';
 
 //components
 import Footer from './components/Footer'
@@ -57,6 +58,7 @@ function App() {
                         <Switch>
                             <Route path='/profile' render={() => <ProfileScreen />} />
                             <Route exact path='/' render={() => <HomeScreen />} />
+                            <Route path='/faq' render={() => <FAQ />}/>
                         </Switch>
                         <Footer />
                     </>
