@@ -32,7 +32,7 @@ class Banner extends React.Component {
                 backgroundPosition: 'center center'
             }}>
                 <div className='banner-content'>
-                    <h1 className='banner-title'>{this.state.movie.title || this.state.movie.name || this.state.movie.original_name || 'Movie Name'}</h1>
+                    <h1 className='banner-title'>{this.state.movie.title || this.state.movie.name || this.state.movie.original_title || 'Movie Name'}</h1>
                     <div className='banner-btn-div'>
                         <button className="banner-btn">Play</button>
                         <button className="banner-btn">My List</button>

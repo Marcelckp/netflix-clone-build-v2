@@ -1,17 +1,63 @@
 .movieDash {
-    background-color: white;
+    object-fit: contain;
     margin-left: 20px;
     margin-right: 20px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     height: 500px
 }
 
 .movieDashInfo {
-    position: relative;
-    left: 50px;
-    margin-right: 700px;
+    z-index: 1;
+    margin-left: 55px;
+    margin-right: 500px;
+    margin-top: -500px;
     padding-top: 40px;
-    padding-left: 10px;
     color: white;
     font-size: 16px;
+}
+
+.movieDashInfo h1 {
+    font-size: 40px
+}
+
+.movieDashInfo h2 {
+    padding-top: 20px;
+    font-size: 15px
+}
+
+.movieDashInfo h3 {
+    padding-top: 10px;
+    font-size: 15px;
+}
+
+.movieDashInfo h4 {
+    margin-top: -20px;
+}
+
+.Dash-btn {
+    margin-top: 20px;
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    border-radius: 0.2vw;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    margin-right: 1rem;
+    background-color: rgba(51, 51, 51, 0.5)
+}
+
+.Dash-btn:hover {
+    color: #000;
+    background-color: #e6e6e6;
+    transition: all 0.2s
+}
+
+.dash-shader {
+    background-color: #111;
+    /* margin-top: -100px; */
+    z-index: 1;
+    height: 100%;
+    /* width: 20%; */
+    background: linear-gradient(270deg, transparent, rgba(37, 37, 37, 0.61)20%, #111 60%)
 }

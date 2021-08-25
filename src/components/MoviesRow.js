@@ -33,7 +33,7 @@ class MovieRow extends React.Component {
             }
         }
 
-        // console.log(this.state.clickedMovie)
+        // console.log(this.state.movies)
         return ( 
         <div className='row'>
             <h2 className='net-title'>{this.props.title}</h2>
