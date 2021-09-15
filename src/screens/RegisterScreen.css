@@ -87,3 +87,8 @@ p {
 .RegisterTextF {
     margin: 20px
 }
+
+.registerGetStarted a {
+    text-decoration: none;
+    color: white;
+}

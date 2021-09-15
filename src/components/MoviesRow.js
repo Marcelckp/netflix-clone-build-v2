@@ -39,7 +39,7 @@ class MovieRow extends React.Component {
             <h2 className='net-title'>{this.props.title}</h2>
             <div className='row-movies'>
                 {this.state.movies.map((movie) => {
-                    if (this.props.originalsRow && movie.poster_path || !this.props.originalsRow && movie.backdrop_path) return ( <img 
+                    if ((this.props.originalsRow && movie.poster_path) || (!this.props.originalsRow && movie.backdrop_path)) return ( <img 
                                             className={`poster ${this.props.originalsRow && 'row-poster-large'}`}
                                             src={`${posterBase}${this.props.originalsRow ? movie.poster_path : movie.backdrop_path}`} 
                                             alt={movie.name} 
