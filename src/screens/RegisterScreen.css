@@ -66,16 +66,18 @@ p {
 }
 
 .RegisterTextF>form>input[type='email'] {
+    /* margin-bottom: 10px; */
     padding: 10px;
     outline-width: 0;
-    height: 30px;
+    height: 30.12px;
     width: 30%;
     border: none;
     max-width: 600px;
 }
 
 .registerGetStarted {
-    padding: 16px 20px;
+    margin-top: 10px;
+    padding: 14px 20px 18px 20px;
     font-size: 1rem;
     font-weight: 600;
     background-color: #e7131e;

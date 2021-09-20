@@ -51,3 +51,31 @@ form>h4 {
     cursor: pointer;
     text-decoration: underline
 }
+
+
+/*spinner*/
+
+.preloader::before {
+    content: "";
+    box-sizing: border-box;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 8px solid red;
+    border-top-color: rgba(0, 0, 0, 0.85);
+    animation: spinner 0.7s linear infinite;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+.error {
+    color: red;
+    margin-bottom: 10px;
+    font-size: 15px;
+    text-align: left;
+}
