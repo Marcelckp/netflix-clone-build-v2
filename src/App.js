@@ -10,6 +10,8 @@ import HomeScreen from './screens/HomeScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import FAQ from './screens/faqform.js';
+import notFound from './screens/notFound';
+import ErrorScreen from './screens/ErrorScreen';
 
 //components
 import Footer from './components/Footer'
@@ -35,7 +37,7 @@ function App() {
                 dispatch(logout());
             }
         })
-        //equalivent to saying when it cleans up run the function ie)
+        //the same as saying when it cleans up run the function ie)
         /**
          * return () => {
          *    unsubscribe
@@ -56,9 +58,12 @@ function App() {
                 ) : (
                     <>
                         <Switch>
-                            <Route path='/profile' render={() => <ProfileScreen />} />
                             <Route exact path='/' render={() => <HomeScreen />} />
+                            <Route path='/profile' render={() => <ProfileScreen />} />
                             <Route path='/faq' render={() => <FAQ />}/>
+                            <Route path='/error' render={() => <ErrorScreen />} />
+                            <Route path='/notFound' component={notFound} />
+                            <Route component={notFound} />
                         </Switch>
                         <Footer />
                     </>

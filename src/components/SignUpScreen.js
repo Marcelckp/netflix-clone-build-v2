@@ -1,9 +1,12 @@
-import React, { useRef, useState } from 'react'
-import './SignInScreen.css'
+import React, { useRef, useState } from 'react';
+import './SignInScreen.css';
+import { useHistory } from 'react-router-dom';
 
 import { auth } from '../firebase';
 
 function SignUpScreen(props) {
+
+    const history = useHistory()
 
     const [loading, setLoading] = useState(false);
     const [error, setErrors] = useState(null);
@@ -18,7 +21,7 @@ function SignUpScreen(props) {
             emailRef.current.value,
             passwordRef.current.value,
         ).then((CreatedUser) => {
-            console.log(CreatedUser)
+            console.log(CreatedUser);
             setLoading(false);
         }).catch(error => {
             console.log(error.message)
@@ -27,6 +30,7 @@ function SignUpScreen(props) {
             if (error.message === 'Password should be at least 6 characters.' || error.message === 'The password must be 6 characters long or more.') setErrors('* Password must be at least 6 characters')
             else if (error.message === 'The email address is badly formatted.') setErrors('* Email has been badly formatted')
             else if (error.message === 'The email address is already in use by another account.') setErrors('* Email is already in use by another account')
+            else history.push('/error')
         })
 
         // console.log(emailRef.current.value, passwordRef.current.value)

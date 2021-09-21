@@ -1,11 +1,13 @@
 import React, {useRef, useState} from 'react'
 import './SignInScreen.css';
-// import RegisterScreen from '../screens/RegisterScreen';
+import { useHistory } from 'react-router-dom';
 
 //explicit export
 import { auth } from '../firebase';
 
 function SignInScreen() {
+
+    const history = useHistory();
 
     const [loading, setLoading] = useState(false)
     const [error, setErrors] = useState(null)
@@ -18,10 +20,6 @@ function SignInScreen() {
     const signIn = (e) => {
         e.preventDefault()
         setLoading(true);
-        // if (!emailRef.current.value && !passwordRef.current.value) setErrors(['* Please enter a value for email & password']);
-        //     else if (!emailRef.current.value) setErrors(['* Please enter a email value']);
-        //     else if (!passwordRef.current.value) setErrors(['* Please enter a password value']);
-        //     else if (passwordRef.length < 6) setErrors(['* Password Value must be at least 6 characters long'])
         auth.signInWithEmailAndPassword(
             emailRef.current.value,
             passwordRef.current.value,
@@ -35,6 +33,7 @@ function SignInScreen() {
             if (err.message === "There is no user record corresponding to this identifier. The user may have been deleted.") setErrors(['* No User was found try sign-in again']);
             else if (err.message === 'The email address is badly formatted.') setErrors(['* Email has been badly formatted']);
             else if (err.message === 'The password is invalid or the user does not have a password.') setErrors(['* Password has been badly formatted'])
+            else history.push('/error')
         })
     }
 

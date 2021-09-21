@@ -1,0 +1,100 @@
+.notFound {
+    position: relative;
+    background: url('https://assets.nflxext.com/ffe/siteui/pages/errors/bg-lost-in-space.png') center no-repeat;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+
+.title-notFound {
+    font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+    text-align: center;
+    padding-top: 20vh;
+    margin-bottom: 2vw;
+    font-size: 4em;
+    font-weight: 700px;
+}
+
+.text-notFound {
+    color: white;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    padding-bottom: 0.2em;
+    margin: 0 auto;
+    width: 50vw;
+    font-weight: 300;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .57)
+}
+
+.blackDrop {
+    background-color: black;
+}
+
+.returnBtn-not {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 0.9rem;
+    line-height: 0.8rem;
+    font-weight: bold;
+}
+
+.home-btn {
+    text-transform: none;
+    text-decoration: none;
+}
+
+.center-div-not {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px
+}
+
+.notFound-errorCode {
+    display: flex;
+    justify-content: center;
+}
+
+.errorSpan {
+    color: white;
+    border-left: 2px solid #e50914;
+    letter-spacing: .1rem;
+    font-weight: 100;
+    height: 40px;
+    padding-left: 1.2vw;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    object-fit: contain;
+    line-height: 2.4rem
+}
+
+.image--source-notFound {
+    bottom: 0;
+    color: white;
+    position: fixed;
+    font-size: 1rem important;
+    right: 0px;
+    letter-spacing: .1rem;
+    margin: 2.5vw 4.8vw;
+    font-weight: 100;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .57)
+}
+
+.strongTag {
+    letter-spacing: 0;
+    font-weight: 700;
+}
