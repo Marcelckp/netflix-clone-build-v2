@@ -12,6 +12,7 @@ import ProfileScreen from './screens/ProfileScreen';
 import FAQ from './screens/faqform.js';
 import notFound from './screens/notFound';
 import ErrorScreen from './screens/ErrorScreen';
+import WatchScreen from './screens/WatchScreen';
 
 //components
 import Footer from './components/Footer'
@@ -61,6 +62,7 @@ function App() {
                             <Route exact path='/' render={() => <HomeScreen />} />
                             <Route path='/profile' render={() => <ProfileScreen />} />
                             <Route path='/faq' render={() => <FAQ />}/>
+                            <Route path='/watch/:id' render={(props) => <WatchScreen {...props} />} />
                             <Route path='/error' render={() => <ErrorScreen />} />
                             <Route path='/notFound' component={notFound} />
                             <Route component={notFound} />

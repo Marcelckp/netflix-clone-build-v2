@@ -13,7 +13,7 @@ function movieDash(props) {
             <div className="dash-shader"></div>
             <div className="movieDashInfo">
                 <h1>{props.movie.name|| props.movie.title||props.movie.original_title}</h1>
-                <button className="Dash-btn">Play</button>
+                <a href={`/watch/${ props.movie.name || props.movie.title || props.movie.original_title || '' }`}><button className="Dash-btn">Play</button></a>
                 <button className="Dash-btn">My List</button>
                 <h2>Date Released: {props.movie.first_air_date || props.movie.release_date}</h2>
                 <h3>{props.movie.overview}</h3>

@@ -1,0 +1,61 @@
+.WatchScreen--player {
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+}
+
+.movie--player {
+    height: 100vh;
+    width: 100vw;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.yt-panel-cover {
+    object-fit: contain;
+    position: relative;
+    bottom: 35px;
+    background-color: #111;
+    height: 70px;
+    width: 100%;
+    z-index: 5;
+    display: flex
+}
+
+.WatchScreen-movie-title {
+    color: white;
+    object-fit: contain;
+    position: relative;
+    top: 15px;
+    left: 35px;
+    margin-right: 100px;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.fadeOut {
+    -webkit-animation: fadeOut 20s;
+    animation: fadeOut 20s
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.place-return-btn {
+    position: relative;
+    top: 15px
+}
