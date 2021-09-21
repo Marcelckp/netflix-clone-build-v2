@@ -26,7 +26,7 @@ function NotFound() {
             </div>
             <div>
                 <h1 className="title-notFound">Lost your way?</h1>
-                <p className="text-notFound">Sorry, we can't find that page. You'll find lots to explore on the home page.</p>
+                <p className="text-notFound">Sorry, we can't find the page you are looking for. You'll find lots to explore on the home page, click the button below to return to home.</p>
             </div>
             <div className="center-div-not">
                 <a href="/" className="home-btn"><button className="returnBtn-not">Netflix Home</button></a>
