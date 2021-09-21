@@ -18,7 +18,12 @@ function RegisterScreen() {
                 <img
                 className="register-logo" 
                 src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" 
-                alt="" />
+                alt="netflix home button" 
+                onClick={() => {
+                    setSignIn(false);
+                    setSignUp(false);
+                }}
+                    />
                 <button onClick={()=> setSignIn(true)}className="register-button">Sign In</button>
                 <div className="register-gradient" />   
             </div>

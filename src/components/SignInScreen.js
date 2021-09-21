@@ -1,6 +1,6 @@
 import React, {useRef, useState} from 'react'
 import './SignInScreen.css';
-import RegisterScreen from '../screens/RegisterScreen';
+// import RegisterScreen from '../screens/RegisterScreen';
 
 //explicit export
 import { auth } from '../firebase';
@@ -8,7 +8,7 @@ import { auth } from '../firebase';
 function SignInScreen() {
 
     const [loading, setLoading] = useState(false)
-    const [error, setErrors] = useState([])
+    const [error, setErrors] = useState(null)
 
     //react ref hook
     const emailRef = useRef(null);
@@ -45,12 +45,9 @@ function SignInScreen() {
             {loading ? 
                 <div className="preloader"></div>
             :
-            
                 <form>
                     <h1>Sign In</h1>
-                    {error ? 
-                        <p className="error"> {error} </p>
-                    : null}
+                    {error ? <p className="error"> {error} </p> : null}
                     <input ref={emailRef} placeholder="Enter your email..." type='email' />
                     <input ref={passwordRef}placeholder='Enter your password' type="password" />
                     <button type="submit" onClick={signIn}>Sign In</button>
