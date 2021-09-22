@@ -4,9 +4,6 @@ import Youtube from 'react-youtube';
 import './WatchScreen.css';
 import { useHistory, NavLink } from 'react-router-dom';
 
-//components
-import Nav from '../components/Nav';
-
 function WatchScreen(props) {
 
     const history = useHistory();
@@ -14,7 +11,7 @@ function WatchScreen(props) {
     const movieName = props.match.params.id
     console.log(movieName)
 
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
     const [movieId, setMovieId] = useState(null);
 
     const opts = {
