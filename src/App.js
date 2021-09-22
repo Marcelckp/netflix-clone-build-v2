@@ -13,6 +13,7 @@ import FAQ from './screens/faqform.js';
 import notFound from './screens/notFound';
 import ErrorScreen from './screens/ErrorScreen';
 import WatchScreen from './screens/WatchScreen';
+import MyList from './screens/MyListScreen/MyList';
 
 //components
 import Footer from './components/Footer'
@@ -64,6 +65,7 @@ function App() {
                             <Route path='/faq' render={() => <FAQ />}/>
                             <Route path='/watch/:id' render={(props) => <WatchScreen {...props} />} />
                             <Route path='/error' render={() => <ErrorScreen />} />
+                            <Route path='/mylist' render={() => <MyList />} />
                             <Route path='/notFound' component={notFound} />
                             <Route component={notFound} />
                         </Switch>

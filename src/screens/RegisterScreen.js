@@ -1,8 +1,9 @@
 import React, {useState, useRef} from 'react';
 import './RegisterScreen.css'
 
-import SignInScreen from '../components/SignInScreen'
-import SignUpScreen from '../components/SignUpScreen'
+//components
+import SignInScreen from '../components/SignInScreen';
+import SignUpScreen from '../components/SignUpScreen';
 
 function RegisterScreen() {
 

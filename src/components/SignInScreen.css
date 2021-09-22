@@ -63,7 +63,7 @@ form>h4 {
     width: 60px;
     border-radius: 50%;
     border: 8px solid red;
-    border-top-color: rgba(0, 0, 0, 0.85);
+    border-top-color: transparent;
     animation: spinner 0.7s linear infinite;
 }
 

@@ -62,3 +62,12 @@
     /* width: 20%; */
     background: linear-gradient(270deg, transparent, rgba(37, 37, 37, 0.61)20%, #111 60%)
 }
+
+.center-preloader {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    object-fit: contain;
+    left: 10px;
+    bottom: 300px
+}

@@ -18,9 +18,9 @@ function ErrorScreen() {
 
                 <h1><NavLink to='faq' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/faq')}>F&Q</NavLink></h1>
 
-                <h1><NavLink to='contactme' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/contactme')}>Contact Me</NavLink></h1>
+                <h1><NavLink to='aboutme' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/aboutme')}>About Me</NavLink></h1>
 
-                <h1><NavLink to='New&Popular' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/New&Popular')}>New & Popular</NavLink></h1>
+                <h1><NavLink to='mylist' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/mylist')}>My List</NavLink></h1>
                 <img 
                     onClick={() => history.push('/profile')}
                     className='nav-avatar'
