@@ -1,9 +1,10 @@
-.AboutScreen {
+.AboutScreen-container {
     height: 100vh;
-    width: 100vw;
+    width: 98.6vw;
     color: #fff;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.57);
     object-fit: contain;
+    max-height: 600px;
 }
 
 .AboutScreen-container {
@@ -11,5 +12,40 @@
     padding-top: 30px;
     max-width: 55%;
     text-align: center;
-    margin: auto
+    margin: auto;
+    text-align: left;
+    object-fit: contain;
+}
+
+.contactMe-form {
+    display: grid;
+    flex-direction: column;
+}
+
+.contactMe-form input,
+textarea {
+    padding: 5px 15px;
+    outline-width: 0;
+    height: 40px;
+    margin-bottom: 14px;
+    border: none;
+    border-radius: 8px;
+    max-width: 100%;
+}
+
+.contactMe-form button {
+    padding: 16px 20px;
+    font-size: 1rem;
+    color: #fff;
+    border: none;
+    background-color: #e50914;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 4px
+}
+
+.AboutScreen-container>p {
+    margin-bottom: 10px;
+    max-width: 100%
 }
