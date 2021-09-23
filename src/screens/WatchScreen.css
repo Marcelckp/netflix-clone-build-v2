@@ -46,6 +46,11 @@
     }
 }
 
+
+/* so that the nav bar can fade away so that the user can view the video/movie/series without any distractions 
+
+(note: bring back the name after the users mouse moves when the nav has already faded out !work on it!)*/
+
 .fadeOut {
     -webkit-animation: fadeOut 20s;
     animation: fadeOut 20s
