@@ -19,16 +19,18 @@ function MyList() {
     const [loading, setLoading] = useState(true);
         
     
-        useEffect( async() => {
-                await firebase.database().ref('Account/'+user).on('value', (snapshot) => {
-                    if (!snapshot.val()) return null;
-                    else {setFavMovie(snapshot.val().likedMovies);
-                    setLoading(false);}
-                },
-                error => {
-                    console.log(error);
-                    history.push('/error');
-                })
+        useEffect(() => {
+            let mounted = true;
+            firebase.database().ref('Account/'+user).on('value', (snapshot) => {
+                if (mounted) {
+                    setFavMovie((snapshot.val().likedMovies) || (''));
+                    setLoading(false);
+                }
+            })
+
+                return () => {
+                    mounted = false;
+                }
         },[user, history])
 
     // const poster = favMovie.backdrop_path || favMovie.poster_path || null;
@@ -37,24 +39,30 @@ function MyList() {
     return (
         <div className="MyList">
             <Nav />
-            <header className="banner"
-            style={{
-                backgroundSize: 'cover',
-                backgroundImage: `url('https://image.tmdb.org/t/p/original/${favMovie ? favMovie.backdrop_path : null}')`,
-                backgroundPosition: 'center center'
-            }}>
-                <div className='banner-fadeBottom move_down'></div>
-            </header>
-            <div className='your--fav-movies'>
-                <div className='myList--body'>
-                    <h1>Your Current Favorite</h1>
-                    <p>Coming Soon...</p>
-                    <br />
-                    <br />
-                    <p>But in the meantime your current favorite series/movie is </p>
-                    <p>* -- {favMovie.name || favMovie.title || favMovie.original_title} -- *</p>
-                </div>
-            </div>
+            { loading ? 
+                    <div className="preloader center-preloader-onPage-myList"></div>
+                : 
+                    <>
+                        <header className="banner"
+                        style={{
+                            backgroundSize: 'cover',
+                            backgroundImage: `url('https://image.tmdb.org/t/p/original/${favMovie ? favMovie.backdrop_path : null}')`,
+                            backgroundPosition: 'center center'
+                        }}>
+                            <div className='banner-fadeBottom move_down'></div>
+                        </header>
+                        <div className='your--fav-movies'>
+                            <div className='myList--body'>
+                                <h1>Your Current Favorite</h1>
+                                <p>Coming Soon...</p>
+                                <br />
+                                <br />
+                                <p>But in the meantime your current favorite series/movie is </p>
+                                <p>* -- {favMovie.name || favMovie.title || favMovie.original_title} -- *</p>
+                            </div>
+                        </div> 
+                    </> }
+            
         </div>
     )
 }
