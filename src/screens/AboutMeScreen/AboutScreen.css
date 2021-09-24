@@ -4,7 +4,7 @@
     color: #fff;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.57);
     object-fit: contain;
-    max-height: 600px;
+    max-height: 650px;
 }
 
 .AboutScreen-container {
@@ -23,7 +23,7 @@
 }
 
 .contactMe-form input,
-textarea {
+.contactMe-form textarea {
     padding: 5px 15px;
     outline-width: 0;
     height: 40px;
@@ -31,6 +31,13 @@ textarea {
     border: none;
     border-radius: 8px;
     max-width: 100%;
+}
+
+.contactMe-form textarea {
+    height: 100px;
+    resize: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 .contactMe-form button {
@@ -48,4 +55,72 @@ textarea {
 .AboutScreen-container>p {
     margin-bottom: 10px;
     max-width: 100%
+}
+
+.contactMe-form label {
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 5px
+}
+
+.contactMe-form input::placeholder,
+.contactMe-form textarea::placeholder {
+    color: rgb(163, 155, 155);
+    font-weight: 400;
+    font-size: 0.8em;
+}
+
+.contactMe-form textarea::placeholder {
+    padding-top: 10px
+}
+
+.popup-aboutScreen {
+    margin-top: 10px
+}
+
+.title-aboutScreen {
+    text-align: center;
+    margin-top: 10px
+}
+
+.success-icon-aboutScreen {
+    position: relative;
+    left: 35%;
+    height: 30%;
+    width: 30%;
+}
+
+#messageAgain-popup-btn {
+    padding: 16px 20px;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    background-color: #e50914;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 20px;
+    width: 100%
+}
+
+.description-aboutScreen {
+    text-align: center;
+    margin-top: 10px
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadein {
+    -webkit-animation: fadein 1s;
+    animation: fadein 1s
 }

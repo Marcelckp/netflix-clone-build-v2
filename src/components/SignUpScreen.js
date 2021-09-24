@@ -44,8 +44,8 @@ function SignUpScreen(props) {
                 <form>
                     <h1>Sign Up</h1>
                     {error ? <p className="error"> {error} </p> : null}
-                    <input ref={emailRef} placeholder="Enter your email..." type='email' defaultValue={props.email} />
-                    <input ref={passwordRef}placeholder='Enter your password' type="password" />
+                    <input require ref={emailRef} placeholder="Enter your email..." type='email' defaultValue={props.email} />
+                    <input require ref={passwordRef}placeholder='Enter your password' type="password" />
                     <button type="submit" onClick={register}>Sign Up</button>
 
                     {/* <h4><span className='newToNet'>New to Netflix? </span><span className='signUp4net'>Sign up Now.</span></h4> */}
