@@ -9,7 +9,7 @@ import success from '../../img/success.png'
 
 function AboutScreen() {
 
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const [successful, setSuccessful] = useState(false);
 
@@ -18,6 +18,7 @@ function AboutScreen() {
     const handleSubmit = (e) => {
         e.preventDefault();
         setLoading(true);
+        
         emailjs.sendForm('service_iv9rirp','template_h8ow76s', e.target, 'user_NLpfJjcfCiqUZv0zspDly')
             .then((response) => {
                 setLoading(false);
@@ -31,7 +32,7 @@ function AboutScreen() {
                 console.log(error);
                 setFailed(true);
             })
-            e.target.reset()
+            // e.target.reset();
     }
 
     const messageAgain = (e) => {
@@ -62,7 +63,8 @@ function AboutScreen() {
                 
                 {loading ?  <div className="preloader center-email-block"></div> :
 
-                    !loading && successful ? <div className="fadein popup-aboutScreen">
+                    !loading && successful ? 
+                        <div className="fadein popup-aboutScreen">
                             <img src={success} alt="successful" className="success-icon-aboutScreen" />
                             <div className="title-aboutScreen">
                                 <p>Success!</p>
@@ -76,7 +78,9 @@ function AboutScreen() {
                                 </button>
                             </div>
                         </div>
-                    : !loading && failed ? <div className="failed">Message failed to send </div> :
+                    : !loading && failed ? 
+                        <div className="failed">Message failed to send </div> 
+                    :
                         <form className='contactMe-form' onSubmit={handleSubmit}>
                             <label htmlFor="nameAbout">Name</label>
                             <input type="text" id='nameAbout' name='fullName' required placeholder='Enter Your Name' />
