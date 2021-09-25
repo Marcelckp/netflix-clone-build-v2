@@ -124,3 +124,9 @@
     -webkit-animation: fadein 1s;
     animation: fadein 1s
 }
+
+.center-email-block {
+    position: relative;
+    left: 50%;
+    top: 28%
+}
