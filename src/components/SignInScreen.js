@@ -47,8 +47,8 @@ function SignInScreen() {
                 <form>
                     <h1>Sign In</h1>
                     {error ? <p className="error"> {error} </p> : null}
-                    <input required ref={emailRef} placeholder="Enter your email..." type='email' />
-                    <input required ref={passwordRef}placeholder='Enter your password' type="password" />
+                    <input ref={emailRef} placeholder="Enter your email..." type='email' />
+                    <input ref={passwordRef}placeholder='Enter your password' type="password" />
                     <button type="submit" onClick={signIn}>Sign In</button>
 
                     {/* <h4><span className='newToNet'>New to Netflix?  </span><span className='signUp4net' onClick={() =><RegisterScreen />}>Sign up Now.</span></h4> */}

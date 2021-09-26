@@ -21,19 +21,22 @@ function MyList() {
 
     const [clickedMovie, setClickedMovie] = useState(null);
 
+    const [clickedMovieDataKey, setClickedMovieDataKey] = useState(null);
+
     const [loading, setLoading] = useState(true);
 
         useEffect(() => {
             let mounted = true;
-            firebase.database().ref('Account/'+user).on('value', (snapshot) => {
+            firebase.database().ref('Account/'+ user).on('value', (snapshot) => {
                 if (mounted) {
                     let moviesArr = [];
                     snapshot.forEach((childSnapshot) => {
-                        moviesArr.push(childSnapshot.val())
+                        moviesArr.push([childSnapshot.val(), childSnapshot._delegate.ref._path.pieces_[2]]);
                     })
                     setFavMovie((moviesArr.reverse()) || (''));
-                    setDisplayMovie(moviesArr[Math.floor(Math.random() * moviesArr.length)])
+                    setDisplayMovie(moviesArr[Math.floor(Math.random() * moviesArr.length)][0]);
                     setLoading(false);
+                    // console.log(moviesArr)
                 }
             })
 
@@ -42,15 +45,30 @@ function MyList() {
                 }
         },[user, history]);
 
-    console.log(favMovie);
+    // console.log(favMovie);
     // console.log(displayMovie)
 
-    const handleClicked = (movie) => {
+    const handleClicked = (movie, DataKey) => {
         if (clickedMovie && movie === clickedMovie) {
             setClickedMovie(null);
+            setClickedMovieDataKey(null);
         } else {
-            setClickedMovie(movie)
+            setClickedMovie(movie);
+            setClickedMovieDataKey(DataKey);
         }
+    }
+
+    console.log(clickedMovie)
+    console.log(clickedMovieDataKey)
+
+
+    const handleRemoveEntry = (e) => {
+        e.preventDefault();
+        setLoading(true);
+        firebase.database().ref('Account/'+ user + `/${clickedMovieDataKey}`).remove().then(() => {
+            setLoading(false);
+            setClickedMovie(null);
+        })
     }
 
     return (
@@ -74,19 +92,22 @@ function MyList() {
                             <h2 className="net-title row">Your Favorites</h2>
                             <div className='row-movies'>
                                 {favMovie.map((movie) => {
-                                    if ((movie.originalsRow && movie.poster_path) || (!movie.originalsRow && movie.backdrop_path)) {
-                                        return ( <img 
-                                            className={` poster row-poster-large`}
-                                            src={`https://image.tmdb.org/t/p/original/${movie.originalsRow ? movie.poster_path : movie.backdrop_path}`} 
-                                            alt={movie.name} 
-                                            onClick={() => handleClicked(movie)}
-                                            key={movie.id} />)
+                                    if ((movie[0].originalsRow && movie[0].poster_path) || (!movie[0].originalsRow && movie[0].backdrop_path)) {
+                                        return ( 
+                                            <img 
+                                                className={` poster row-poster-large`}
+                                                src={`https://image.tmdb.org/t/p/original/${movie[0].originalsRow ? movie[0].poster_path : movie[0].backdrop_path}`}
+                                                // props={movie[1]}
+                                                alt={movie[0].name} 
+                                                onClick={() => handleClicked(movie[0], movie[1])}
+                                                key={movie[0].id} />)
                                     } else {
                                         return null;
                                     }
                                 })}
                             </div>
-                            {clickedMovie ? <div className="movieDash"
+                            {clickedMovie ? 
+                                    <div className="movieDash"
                                         style={{
                                             backgroundSize: 'cover',
                                             backgroundImage: `url('https://image.tmdb.org/t/p/original/${clickedMovie.backdrop_path}')`,
@@ -103,6 +124,8 @@ function MyList() {
                                                     <button className="Dash-btn">Play</button>
                                                 </a>
 
+                                                <button className="Dash-btn" onClick={handleRemoveEntry}>Remove From List</button>
+
                                                 <h2>Date Released: {clickedMovie.first_air_date || clickedMovie.release_date}</h2>
 
                                                 <h3>{clickedMovie.overview}</h3>
@@ -110,7 +133,7 @@ function MyList() {
                                                 <h4>Rating: {clickedMovie.vote_average}/10</h4>
                                             </div> }
                                     </div> : null}
-                            </div> 
+                        </div> 
             </> }
         </div>
     )
