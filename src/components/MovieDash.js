@@ -6,21 +6,25 @@ import { selectUser } from '../features/userSlice';
 
 function MovieDash(props) {
 
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+    // const [movieKey, setMovieKey] = useState(0);
 
     const movie = props.movie
     const user = useSelector(selectUser).uid;
         // console.log(user)
         // console.log(movie)
-    const addToMyList = async(e) => {
+
+    const addToMyList = (e) => {
+
         setLoading(true)
         // console.log(loading);
-        await firebase.database().ref('Account/'+user).set({
-                likedMovies: movie
-        }).then(() => {
+        firebase.database().ref('Account/'+user).push(movie).then(() => {
             setLoading(false);
         })
+        // setMovieKey(prevVal => prevVal+=1)
     }
+
+    // console.log(movieKey)
 
     return (
         <div className="movieDash"
