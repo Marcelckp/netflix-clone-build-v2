@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory, NavLink } from 'react-router-dom';
 import './Nav.css';
 
-function Nav() {
+function Nav(props) {
 
     const [show, handleShow] = useState(false)
 
@@ -20,7 +20,7 @@ function Nav() {
     }, []);
 
     return (
-        <div className={`nav ${show && 'nav-black'}`}>
+        <div className={`nav ${show && 'nav-black'} ${props.class ? props.class : null}`}>
             <img 
                 onClick={() => history.push('/')}
                 className='Nav-logo' src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="Netflix logo" />

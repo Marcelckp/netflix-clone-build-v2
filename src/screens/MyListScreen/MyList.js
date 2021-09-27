@@ -8,6 +8,7 @@ import { useHistory } from 'react-router-dom';
 
 //components 
 import Nav from '../../components/Nav';
+import MyListPhoto from '../../img/strangerThings.jpg';
 
 function MyList() {
 
@@ -36,7 +37,11 @@ function MyList() {
                         moviesArr.push([childSnapshot.val(), childSnapshot._delegate.ref._path.pieces_[2]]);
                     })
                     setFavMovie((moviesArr.reverse()) || (''));
-                    setDisplayMovie(moviesArr[Math.floor(Math.random() * moviesArr.length)][0]);
+
+                    if (moviesArr.length > 0) {
+                        setDisplayMovie(moviesArr[Math.floor(Math.random() * moviesArr.length)][0]);
+                    }
+
                     setLoading(false);
                     // console.log(moviesArr)
                 }
@@ -62,8 +67,8 @@ function MyList() {
         }
     }
 
-    console.log(clickedMovie)
-    console.log(clickedMovieDataKey)
+    // console.log(clickedMovie)
+    // console.log(clickedMovieDataKey)
 
 
     const handleRemoveEntry = (e) => {
@@ -77,11 +82,22 @@ function MyList() {
 
     return (
         <div className="MyList">
-            <Nav />
+            <Nav class={`${favMovie && favMovie.length === 0 ? 'blackDrop' : null}`} />
             { loading ? 
                     <div className="preloader center-preloader-onPage-myList"></div>
                 : !loading && favMovie.length === 0 ?
-                    <p className="no-liked">You haven't licked any movies yet</p>
+                    <div className="your--fav-movies" style={{ 
+                        backgroundSize: 'cover',
+                        backgroundImage: `url(${MyListPhoto})`,
+                        backgroundPosition: 'center center'
+                    }}>
+                        <div className="myList--body">
+                            <h1 className="move_down_middle center-myList-error-text">It Seem That You're Getting Ahead Of Yourself</h1>
+                            <h2 className="center-myList-error-text">You Haven't Liked Any Movies Or Series Yet</h2>
+                            <p className="center-myList-error-text">Go to the home page and click the add to my list button of the series you like/ want to add to your list of favorites and when you visit this page again you'll have all of your favorites displayed.</p>
+                        </div>
+                        <span className="image--source-notFound">FROM <strong className="strongTag">STRANGER THINGS</strong></span>
+                    </div>
                 :
                     <>
                         <header className="banner"

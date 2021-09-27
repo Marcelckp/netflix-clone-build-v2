@@ -10,10 +10,17 @@ function HomeScreen() {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
+        let mounted = true;
         setTimeout(() => {
-            setLoading(false);
-            // console.log('ready');
+            if (mounted) {
+                setLoading(false);
+                // console.log('ready');
+            }
         }, 3000)
+
+        return () => {
+            mounted = false;
+        }
     })
 
     return ( 
