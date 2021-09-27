@@ -86,7 +86,7 @@ function MyList() {
             { loading ? 
                     <div className="preloader center-preloader-onPage-myList"></div>
                 : !loading && favMovie.length === 0 ?
-                    <div className="your--fav-movies" style={{ 
+                    <div className="your--fav-movies fadein" style={{ 
                         backgroundSize: 'cover',
                         backgroundImage: `url(${MyListPhoto})`,
                         backgroundPosition: 'center center'

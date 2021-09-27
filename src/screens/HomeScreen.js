@@ -14,9 +14,8 @@ function HomeScreen() {
         setTimeout(() => {
             if (mounted) {
                 setLoading(false);
-                // console.log('ready');
             }
-        }, 2500)
+        }, 1900)
 
         return () => {
             mounted = false;

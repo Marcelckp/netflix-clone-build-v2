@@ -35,7 +35,7 @@ class MovieRow extends React.Component {
 
         // console.log(this.state.movies)
         return ( 
-        <div className='row'>
+        <div className='row fadein'>
             <h2 className='net-title'>{this.props.title}</h2>
             <div className='row-movies'>
                 {this.state.movies.map((movie) => {

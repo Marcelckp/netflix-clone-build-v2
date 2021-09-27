@@ -53,7 +53,7 @@ function AboutScreen() {
                         }}>
                             <div className='banner-fadeBottom move_down'></div>
                         </header>
-            <div className="AboutScreen-container">
+            <div className="AboutScreen-container fadein">
                 <h1>A Little About Me</h1>
                 <br />
                 <p>Hi my names Marcel Palmer and I'm an aspiring developer from South Africa, focused on Frontend Development but can work my way around the back end.</p>

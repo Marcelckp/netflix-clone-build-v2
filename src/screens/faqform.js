@@ -73,7 +73,7 @@ function Faqform() {
                         className='nav-avatar'
                         src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Netflix Avatar" />
                 </div>
-            <div className="faqform">
+            <div className="faqform fadein">
                 <div className="faq-body">
                     <h1 className="faq-title">Frequently Asked Questions</h1>
 
