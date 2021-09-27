@@ -122,8 +122,8 @@
 }
 
 .fadein {
-    -webkit-animation: fadein 0.6s;
-    animation: fadein 0.6s
+    -webkit-animation: fadein 0.5s;
+    animation: fadein 0.5s
 }
 
 @keyframes fadeout {
@@ -139,8 +139,8 @@
 }
 
 .fadeout {
-    -webkit-animation: fadeout 0.6s;
-    animation: fadeout 0.6;
+    -webkit-animation: fadeout 0.5s;
+    animation: fadeout 0.5;
 }
 
 .center-email-block {

@@ -45,7 +45,7 @@ function AboutScreen() {
     return (
         <div className="AboutScreen">
             <Nav />
-            <header className="banner"
+            <header className="banner fadein"
                         style={{
                             backgroundSize: 'cover',
                             backgroundImage: `url(${PhotoMe})`,

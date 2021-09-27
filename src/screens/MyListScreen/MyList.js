@@ -100,7 +100,7 @@ function MyList() {
                     </div>
                 :
                     <>
-                        <header className="banner"
+                        <header className="banner fadein"
                         style={{
                             backgroundSize: 'cover',
                             backgroundImage: `url('https://image.tmdb.org/t/p/original/${displayMovie ? displayMovie.backdrop_path : null}')`,

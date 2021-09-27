@@ -16,7 +16,7 @@ function HomeScreen() {
                 setLoading(false);
                 // console.log('ready');
             }
-        }, 3000)
+        }, 2500)
 
         return () => {
             mounted = false;

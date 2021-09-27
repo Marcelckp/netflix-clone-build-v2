@@ -10,19 +10,36 @@ class Banner extends React.Component {
         this.state = {
             movie:[]
         }
+        this._isMounted = false;
     }
     
     async componentDidMount() {
-        const movies = await axios.get(`https://api.themoviedb.org/3${apiRequest.fetchNetflixOriginals}`).catch(err => {
-            const history = useHistory();
-            history.push('/error');
-    })
-        this.setState({movie: movies.data.results[Math.floor(Math.random() * movies.data.results.length - 1)]})       
+        this._isMounted = true;
+            if (this._isMounted){
+                const movies = await axios.get(`https://api.themoviedb.org/3${apiRequest.fetchNetflixOriginals}`).catch(err => {
+                    const history = useHistory();
+                    history.push('/error');
+                })
+                    this.setState({movie: movies.data.results[Math.floor(Math.random() * movies.data.results.length)]});
+            
+                setInterval( async() => { 
+                        const movies = await axios.get(`https://api.themoviedb.org/3${apiRequest.fetchNetflixOriginals}`).catch(err => {
+                            const history = useHistory();
+                            history.push('/error');
+                        })
+                        if (this._isMounted){
+                            this.setState({movie: movies.data.results[Math.floor(Math.random() * movies.data.results.length)]}) 
+                            // console.log(this.state.movie);
+                        }
+                }, 20000);
+            }
+    }
+
+    componentWillUnmount() {
+        this._isMounted = false;
     }
     
     render() {
-
-        // console.log(this.state.movie)
 
         //Shortens the movie overview text in the header component
         function truncate(str, n) {
@@ -30,17 +47,17 @@ class Banner extends React.Component {
         }
 
         return (
-            <header className="banner"
+            <header className="banner fadein"
             style={{
                 backgroundSize: 'cover',
                 backgroundImage: `url('https://image.tmdb.org/t/p/original/${this.state.movie ? this.state.movie.backdrop_path : null}')`,
                 backgroundPosition: 'center center'
             }}>
                 <div className='banner-content'>
-                    <h1 className='banner-title'>{ this.state.movie.name || this.state.movie.title|| this.state.movie.original_title || 'Movie Name' }</h1>
+                    <h1 className='banner-title'>{this.state.movie ? (this.state.movie.name || this.state.movie.title|| this.state.movie.original_title) : 'Movie Name' }</h1>
                     <div className='banner-btn-div'>
                     <a href={`/watch/${ this.state.movie.name || this.state.movie.title || this.state.movie.original_title || '' }`}><button className="banner-btn">Play</button></a>
-                        <button className="banner-btn">My List</button>
+                        <a href='/mylist'><button className="banner-btn">My List</button></a>
                     </div>
                     <h1 className='movie-overview'>{truncate(this.state.movie.overview,160)}</h1>
                 </div>
