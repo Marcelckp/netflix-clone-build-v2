@@ -15,13 +15,20 @@ function MovieDash(props) {
         // console.log(movie)
 
     const addToMyList = (e) => {
-
+        let mounted = true;
         setLoading(true)
+
         // console.log(loading);
-        firebase.database().ref('Account/'+user).push(movie).then(() => {
+        
+        firebase.database().ref('Account/' + user).push(movie).then(() => {
+            if (mounted) {
             setLoading(false);
+            }
         })
-        // setMovieKey(prevVal => prevVal+=1)
+        
+        return () => {
+            mounted = false;
+        }
     }
 
     // console.log(movieKey)

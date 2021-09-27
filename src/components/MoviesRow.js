@@ -28,6 +28,9 @@ class MovieRow extends React.Component {
         const handleClicked = (movie) => {
             if (this.state.clickedMovie && movie === this.state.clickedMovie) {
                 this.setState({clickedMovie: null})
+            } else if (this.state.clickedMovie && movie !== this.state.clickedMovie) {
+                this.setState({clickedMovie: null})
+                setTimeout(() => this.setState({clickedMovie: movie}), 0.001)
             } else {
                 this.setState({clickedMovie: movie})
             }
