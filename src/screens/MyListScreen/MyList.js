@@ -23,6 +23,8 @@ function MyList() {
 
     const [clickedMovieDataKey, setClickedMovieDataKey] = useState(null);
 
+    const [classToggle, setClassToggle] = useState(null);
+
     const [loading, setLoading] = useState(true);
 
         useEffect(() => {
@@ -52,9 +54,11 @@ function MyList() {
         if (clickedMovie && movie === clickedMovie) {
             setClickedMovie(null);
             setClickedMovieDataKey(null);
+            setClassToggle(false)
         } else {
             setClickedMovie(movie);
             setClickedMovieDataKey(DataKey);
+            setClassToggle(true);
         }
     }
 
@@ -106,8 +110,8 @@ function MyList() {
                                     }
                                 })}
                             </div>
-                            {clickedMovie ? 
-                                    <div className="movieDash"
+                            { clickedMovie ? 
+                                    <div className={`movieDash ${classToggle ? 'fadein' : 'fade'}`}
                                         style={{
                                             backgroundSize: 'cover',
                                             backgroundImage: `url('https://image.tmdb.org/t/p/original/${clickedMovie.backdrop_path}')`,
@@ -132,7 +136,7 @@ function MyList() {
 
                                                 <h4>Rating: {clickedMovie.vote_average}/10</h4>
                                             </div> }
-                                    </div> : null}
+                                    </div> : null }
                         </div> 
             </> }
         </div>

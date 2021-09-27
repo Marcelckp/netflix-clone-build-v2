@@ -51,7 +51,7 @@ class MovieRow extends React.Component {
                     }
                 })}
             </div>
-            {this.state.clickedMovie ? <MovieDash movie={this.state.clickedMovie} /> : null}
+            {this.state.clickedMovie ? <MovieDash class={'fadein'} movie={this.state.clickedMovie} /> : null}
         </div>
         )
         }

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { selectUser } from '../features/userSlice';
 
 function MovieDash(props) {
-
+    // console.log(props.class)
     const [loading, setLoading] = useState(false);
     // const [movieKey, setMovieKey] = useState(0);
 
@@ -27,7 +27,7 @@ function MovieDash(props) {
     // console.log(movieKey)
 
     return (
-        <div className="movieDash"
+        <div className={`movieDash ${props.class ? props.class : null}`}
             style={{
                 backgroundSize: 'cover',
                 backgroundImage: `url('https://image.tmdb.org/t/p/original/${props.movie.backdrop_path}')`,
