@@ -20,7 +20,10 @@ import AboutScreen from './screens/AboutMeScreen/AboutScreen';
 import Footer from './components/Footer'
 
 function App() {
+    //useSelectorHook
     const user = useSelector(selectUser) || null;
+
+    //useDispatch Hook to use the Redux reducer actions
     const dispatch = useDispatch()
 
     useEffect(() => {

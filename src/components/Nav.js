@@ -2,9 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useHistory, NavLink } from 'react-router-dom';
 import './Nav.css';
 
+import searchIcon from '../img/searchIcon.png';
+import blackSearchIcon from '../img/searchIconBlack.png';
+
 function Nav(props) {
 
-    const [show, handleShow] = useState(false)
+    const [show, handleShow] = useState(false);
+
+    let [searchClicked, setSearchClicked] = useState(false);
 
     const history = useHistory();
     
@@ -31,6 +36,25 @@ function Nav(props) {
             <h1><NavLink to='aboutme' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/aboutme')}>About Me</NavLink></h1>
 
             <h1><NavLink to='mylist' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/mylist')}>My List</NavLink></h1>
+
+            <div className={`search-avatar-container ${searchClicked ? 'search--div--inputBox' : ''}`}>
+                { searchClicked ? 
+                        <>
+                            {/* <div className={`search-avatar-container ${searchClicked ? 'search--div--inputBox' : ''}`}></div> */}
+                            <img src={blackSearchIcon} onClick={() => setSearchClicked(false)} alt="search icon" className='divS--search-icon fade-in' /> 
+                            <input type="text" className='search--field' />
+                        </>
+                : null}
+
+                <img onClick={() => {
+
+                    if (searchClicked) setSearchClicked(false);
+                    else setSearchClicked(true);
+                    
+                }} src={searchIcon} className={`search-avatar ${searchClicked ? 'hide-img' : null}`} alt="search" />
+
+            </div>
+
             <img 
                 onClick={() => history.push('/profile')}
                 className='nav-avatar'

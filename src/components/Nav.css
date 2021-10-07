@@ -33,6 +33,88 @@
     cursor: pointer;
 }
 
+.search-avatar {
+    position: fixed;
+    right: 70px;
+    width: 20px;
+    top: 25px;
+}
+
+.search-avatar-container {
+    transition-timing-function: ease-in;
+    position: fixed;
+    right: 100px;
+    /* this right property sets the div's margin on the right 0 so if you edit the width the width will stretch left since there is no space for it to stretch right && vice versa if you set the left property the div will stretch right if the width changes since there is no space for it to stretch on the right side*/
+    top: 20px;
+    height: 30px;
+    width: 0px;
+    background-color: white;
+    border-radius: 20px;
+    transition: width 2s;
+    transition: all 1s ease;
+    cursor: pointer;
+}
+
+.search--div--inputBox {
+    width: 200px;
+    background-color: white;
+}
+
+.search--field {
+    border: none;
+    position: fixed;
+    right: 112px;
+    top: 21px;
+    padding: 7px;
+    animation: unHide 1s linear;
+}
+
+.search--field:focus {
+    outline: 0
+}
+
+.hide-img {
+    /* animation: hideContent 1s ease; */
+    display: none;
+}
+
+@keyframes unHide {
+    0% {
+        opacity: 0
+    }
+    50% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+
+/* @keyframes hideContent {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: 1
+    }
+    99% {
+        opacity: 0;
+    }
+    100% {
+        display: none;
+    }
+} */
+
+.divS--search-icon {
+    width: 20px;
+    position: fixed;
+    right: 275px;
+    top: 25px;
+    cursor: pointer;
+    animation: unHide 1s linear;
+}
+
 .nav-link {
     position: relative;
     left: 85px;
