@@ -5,6 +5,8 @@ import apiRequest from '../apiRequest';
 import Banner from '../components/Banner';
 import Nav from '../components/Nav';
 
+// import Data from '../movieDataApi';
+
 function HomeScreen() {
 
     const [loading, setLoading] = useState(true)

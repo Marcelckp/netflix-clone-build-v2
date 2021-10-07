@@ -18,10 +18,10 @@ function Footer() {
 
             </div>
             <ul className="Footer-link-container">
+                <li className='footer-wrapper'><a href="/aboutme" className='footer-link'>* About Me *</a></li>
                 <li className='footer-wrapper'><a href="/faq" className='footer-link'>FAQ</a></li>
                 <li className='footer-wrapper'><a href="/" className='footer-link'>Audio and Subtitles</a></li>
                 <li className='footer-wrapper'><a href="/" className='footer-link'>Privacy</a></li>
-                <li className='footer-wrapper'><a href="/contactme" className='footer-link'>* Contact Me *</a></li>
                 <li className='footer-wrapper'><a href="/" className='footer-link'>Audio Description</a></li>
                 <li className='footer-wrapper'><a href="/" className='footer-link'>Investor Relations</a></li>
                 <li className='footer-wrapper'><a href="/" className='footer-link'>Legal Notice</a></li>

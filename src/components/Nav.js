@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useHistory, NavLink } from 'react-router-dom';
 import './Nav.css';
 
@@ -7,12 +7,25 @@ import blackSearchIcon from '../img/searchIconBlack.png';
 
 function Nav(props) {
 
+    let searchVal = useRef(null);
+
     const [show, handleShow] = useState(false);
 
     let [searchClicked, setSearchClicked] = useState(false);
 
     const history = useHistory();
     
+    const handleSearch = (e) => {
+
+        e.preventDefault();
+
+        // console.log(searchVal.current.value === '')
+
+        if (searchVal.current.value === '') history.push(`/search/all`);
+        else history.push(`/search/${searchVal.current.value}`);
+        
+    }
+
     const transitionNavBar = () => {
         if (window.scrollY > 100) {
             handleShow(true);
@@ -42,7 +55,8 @@ function Nav(props) {
                         <>
                             {/* <div className={`search-avatar-container ${searchClicked ? 'search--div--inputBox' : ''}`}></div> */}
                             <img src={blackSearchIcon} onClick={() => setSearchClicked(false)} alt="search icon" className='divS--search-icon fade-in' /> 
-                            <input type="text" className='search--field' />
+                            <input type="text" onSubmit={handleSearch} ref={searchVal} className='search--field' />
+                            <button className='search--submit' onClick={handleSearch}>Submit</button>
                         </>
                 : null}
 

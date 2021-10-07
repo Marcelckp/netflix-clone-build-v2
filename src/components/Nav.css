@@ -55,6 +55,11 @@
     cursor: pointer;
 }
 
+.search--submit {
+    margin-left: 198px;
+    z-index: 20
+}
+
 .search--div--inputBox {
     width: 200px;
     background-color: white;
@@ -67,6 +72,7 @@
     top: 21px;
     padding: 7px;
     animation: unHide 1s linear;
+    z-index: 1
 }
 
 .search--field:focus {

@@ -13,8 +13,12 @@ function Faqform() {
     const toggleDropDown1 = (e) => {
         // console.log(e.target);
         if (clicked1) setClicked1(false);
-        else if (!clicked1) setClicked1(true);
-
+        else if (!clicked1) {
+            setClicked1(true);
+            setClicked2(false);
+            setClicked3(false);
+            setClicked4(false);
+        }
     }
 
     // =================================================================
@@ -23,7 +27,12 @@ function Faqform() {
 
     const toggleDropDown2 = (e) => {
         if (clicked2) setClicked2(false)
-        else if (!clicked2) setClicked2(true);
+        else if (!clicked2) {
+            setClicked2(true);
+            setClicked1(false);
+            setClicked3(false);
+            setClicked4(false);
+        }
     }
 
     //==================================================================
@@ -32,7 +41,12 @@ function Faqform() {
 
     const toggleDropDown3 = (e) => {
         if (clicked3) setClicked3(false);
-        else if (!clicked3) setClicked3(true);
+        else if (!clicked3) {
+            setClicked3(true);
+            setClicked1(false);
+            setClicked2(false);
+            setClicked4(false)
+        }
     }
 
     //==================================================================
@@ -41,7 +55,12 @@ function Faqform() {
 
     const toggleDropDown4 = (e) => {
         if (clicked4) setClicked4(false);
-        else if (!clicked4) setClicked4(true);
+        else if (!clicked4) {
+            setClicked4(true);
+            setClicked1(false);
+            setClicked2(false);
+            setClicked3(false)
+        }
     };
 
     //================================================================== code Inside click arrow to open drop down

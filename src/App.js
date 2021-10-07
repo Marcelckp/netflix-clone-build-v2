@@ -15,6 +15,7 @@ import ErrorScreen from './screens/ErrorScreen';
 import WatchScreen from './screens/WatchScreen';
 import MyList from './screens/MyListScreen/MyList';
 import AboutScreen from './screens/AboutMeScreen/AboutScreen';
+import SearchScreen from './screens/SearchScreen/SearchScreen';
 
 //components
 import Footer from './components/Footer'
@@ -70,6 +71,7 @@ function App() {
                             <Route path='/watch/:id' render={(props) => <WatchScreen {...props} />} />
                             <Route path='/mylist' render={() => <MyList />} />
                             <Route path='/aboutme' render={() => <AboutScreen />} />
+                            <Route path='/search/:string' render={(props) => <SearchScreen {...props} />} />
                             <Route path='/error' render={() => <ErrorScreen />} />
                             <Route path='/notFound' component={notFound} />
                             <Route component={notFound} />
