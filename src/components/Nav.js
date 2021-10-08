@@ -23,7 +23,7 @@ function Nav(props) {
 
         if (searchVal.current.value === '') history.push(`/search/all`);
         else history.push(`/search/${searchVal.current.value}`);
-        
+
     }
 
     const transitionNavBar = () => {
@@ -77,4 +77,4 @@ function Nav(props) {
     )
 }
 
-export default Nav
+export default Nav;

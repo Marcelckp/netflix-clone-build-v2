@@ -5,7 +5,7 @@ function SearchScreen(props) {
     const searchString = props.match.params.string;
 
     console.log(searchString);
-    
+
     return (
         <div className="SearchScreen">
             
@@ -13,4 +13,4 @@ function SearchScreen(props) {
     )
 }
 
-export default SearchScreen
+export default SearchScreen;

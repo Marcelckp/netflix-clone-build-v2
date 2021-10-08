@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { useHistory, NavLink } from 'react-router-dom';
 import './Faqform.css';
 
-function Faqform() {
+import Nav from '../components/Nav';
 
-    const history = useHistory();
+function Faqform() {
 
     // =================================================================
 
@@ -76,22 +75,7 @@ function Faqform() {
 
     return ( 
         <>
-            <div className='nav blackDrop'>
-                    <img 
-                        onClick={() => history.push('/')}
-                        className='Nav-logo' src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="Netflix logo" />
-                    <h1><NavLink exact to='/' className='nav-link'  activeClassName='activeNav' onClick={() => history.push('/')}>Home</NavLink></h1>
-
-                    <h1><NavLink to='faq' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/faq')}>F&Q</NavLink></h1>
-
-                    <h1><NavLink to='aboutme' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/aboutme')}>About Me</NavLink></h1>
-
-                    <h1><NavLink to='mylist' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/mylist')}>My List</NavLink></h1>
-                    <img 
-                        onClick={() => history.push('/profile')}
-                        className='nav-avatar'
-                        src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Netflix Avatar" />
-                </div>
+            <Nav class='blackDrop' />
             <div className="faqform fadein">
                 <div className="faq-body">
                     <h1 className="faq-title">Frequently Asked Questions</h1>
@@ -101,16 +85,16 @@ function Faqform() {
                             <h1>What is Netflix?</h1>
 
                             {clicked1 ? 
-                                <svg id="thin-x" viewBox="0 0 26 26" className="svg-icon-faq" focusable="true">
-                                    <path d="M10.5 9.3L1.8 0.5 0.5 1.8 9.3 10.5 0.5 19.3 1.8 20.5 10.5 11.8 19.3 20.5 20.5 19.3 11.8 10.5 20.5 1.8 19.3 0.5 10.5 9.3Z"></path>
-                                </svg> 
+                                <svg version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 13 13' className='svg-icon-faq rotate'>
+                                        <polygon points="7,6 7,0 6,0 6,6 0,6 0,7 6,7 6,13 7,13 7,7 13,7 13,6 "></polygon>
+                                    </svg> 
                                 :   <svg version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 13 13' className='svg-icon-faq'>
                                         <polygon points="7,6 7,0 6,0 6,6 0,6 0,7 6,7 6,13 7,13 7,7 13,7 13,6 "></polygon>
                                     </svg>}
                             
                         </div>
                         {clicked1 ?
-                            <div className="faqDescription-container">
+                            <div className="faqDescription-container slide-open-animation">
                                 <p className="faqDescription-text">
                                     Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.
                                 </p>
@@ -124,9 +108,9 @@ function Faqform() {
                             <h1>How much does Netflix cost?</h1>
                             
                             {clicked2 ? 
-                                <svg id="thin-x" viewBox="0 0 26 26" className="svg-icon-faq" focusable="true">
-                                    <path d="M10.5 9.3L1.8 0.5 0.5 1.8 9.3 10.5 0.5 19.3 1.8 20.5 10.5 11.8 19.3 20.5 20.5 19.3 11.8 10.5 20.5 1.8 19.3 0.5 10.5 9.3Z"></path>
-                                </svg> 
+                                <svg version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 13 13' className='svg-icon-faq rotate'>
+                                        <polygon points="7,6 7,0 6,0 6,6 0,6 0,7 6,7 6,13 7,13 7,7 13,7 13,6 "></polygon>
+                                    </svg> 
                                 :   <svg version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 13 13' className='svg-icon-faq'>
                                         <polygon points="7,6 7,0 6,0 6,6 0,6 0,7 6,7 6,13 7,13 7,7 13,7 13,6 "></polygon>
                                     </svg>}
@@ -142,9 +126,9 @@ function Faqform() {
                             <h1>Is Netflix safe for kids?</h1>
                             
                             {clicked3 ? 
-                                <svg id="thin-x" viewBox="0 0 26 26" className="svg-icon-faq" focusable="true">
-                                    <path d="M10.5 9.3L1.8 0.5 0.5 1.8 9.3 10.5 0.5 19.3 1.8 20.5 10.5 11.8 19.3 20.5 20.5 19.3 11.8 10.5 20.5 1.8 19.3 0.5 10.5 9.3Z"></path>
-                                </svg> 
+                                <svg version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 13 13' className='svg-icon-faq rotate'>
+                                        <polygon points="7,6 7,0 6,0 6,6 0,6 0,7 6,7 6,13 7,13 7,7 13,7 13,6 "></polygon>
+                                    </svg> 
                                 :   <svg version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 13 13' className='svg-icon-faq'>
                                         <polygon points="7,6 7,0 6,0 6,6 0,6 0,7 6,7 6,13 7,13 7,7 13,7 13,6 "></polygon>
                                     </svg>}
@@ -165,9 +149,9 @@ function Faqform() {
                             <h1>Where can i watch Netflix?</h1>
                             
                             {clicked4 ?
-                                <svg id="thin-x" viewBox="0 0 26 26" className="svg-icon-faq" focusable="true">
-                                    <path d="M10.5 9.3L1.8 0.5 0.5 1.8 9.3 10.5 0.5 19.3 1.8 20.5 10.5 11.8 19.3 20.5 20.5 19.3 11.8 10.5 20.5 1.8 19.3 0.5 10.5 9.3Z"></path>
-                                </svg> 
+                                <svg version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 13 13' className='svg-icon-faq rotate'>
+                                        <polygon points="7,6 7,0 6,0 6,6 0,6 0,7 6,7 6,13 7,13 7,7 13,7 13,6 "></polygon>
+                                    </svg> 
                                 :   <svg version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 13 13' className='svg-icon-faq'>
                                         <polygon points="7,6 7,0 6,0 6,6 0,6 0,7 6,7 6,13 7,13 7,7 13,7 13,6 "></polygon>
                                     </svg>}

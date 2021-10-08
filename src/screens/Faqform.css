@@ -94,12 +94,22 @@
         
         .svg-icon-faq {
             height: 20px;
-            width: 20px;
-            position: relative;
+            /* width: 20px; */
+            /* position: relative; */
+            transition-timing-function: ease;
+            transition: all 0.6s ease;
             fill: #fff;
             padding-top: 3px;
         }
         
+        .rotate {
+            transition-timing-function: ease;
+            transition: all 0.6s ease;
+            transform: rotate(45deg);
+        }
+        
         .svg-icon-faq:hover {
+            transition-timing-function: ease;
+            transition: all 0.6s ease;
             fill: #e50914
         }

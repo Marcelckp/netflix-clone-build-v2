@@ -36,7 +36,7 @@ function App() {
                                 
                 dispatch(login({              //
                     uid: user.uid,           //  redux login 
-                    email: user.email       //  payload
+                    email: user.email       //  action payload to set the user state to the uid and email of the user
                 }))                        //
 
             } else {
