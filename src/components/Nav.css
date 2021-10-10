@@ -69,7 +69,7 @@
     background-color: rgb(108, 228, 108);
     color: white;
     cursor: pointer;
-    animation: unHide 1s linear;
+    animation: unHide 1.5s linear;
 }
 
 .search--div--inputBox {
@@ -130,7 +130,7 @@
     right: 305px;
     top: 25px;
     cursor: pointer;
-    animation: unHide 1s linear;
+    animation: unHide 1.5s linear;
 }
 
 .nav-link {
