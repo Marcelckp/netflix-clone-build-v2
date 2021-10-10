@@ -10,7 +10,7 @@
     margin: auto;
     text-align: center;
     color: white;
-    /* height: 100vh */
+    min-height: 100vh
 }
 
 .search--results-container p {
@@ -41,7 +41,7 @@
 .movies--showcase {
     width: 100%;
     margin: auto;
-    color: black;
+    color: white;
     display: flex;
     object-fit: contain;
     flex-direction: row;
@@ -50,7 +50,7 @@
     align-content: center;
     justify-content: center;
     /* margin-left: 75px; */
-    padding-bottom: 90px
+    padding-bottom: 90px;
 }
 
 .movies--search--div {
@@ -73,4 +73,9 @@
 .movies--search--div:hover {
     transform: scale(1.08);
     opacity: 1;
+}
+
+.no--search--matches {
+    height: 100vh;
+    padding-top: 10%
 }

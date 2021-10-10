@@ -140,7 +140,7 @@ function SearchScreen(props) {
                         {/* <p>this is the div for the movies </p> */}
 
                             { matchedMoviesArr && matchedMoviesArr.length === 0 ? 
-                                <p>No matches were found</p>
+                                <h1 className='no--search--matches'>No matches were found</h1>
                             : null }
 
                             { matchedMoviesArr ?
