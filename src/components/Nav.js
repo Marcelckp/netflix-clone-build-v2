@@ -42,13 +42,13 @@ function Nav(props) {
             <img 
                 onClick={() => history.push('/')}
                 className='Nav-logo' src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="Netflix logo" />
-            <h1><NavLink exact to='/' className='nav-link'  activeClassName='activeNav' onClick={() => history.push('/')}>Home</NavLink></h1>
+            <h1><NavLink exact to='/' className='nav-link'  activeClassName='activeNav'>Home</NavLink></h1>
 
-            <h1><NavLink to='faq' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/faq')}>F&Q</NavLink></h1>
+            <h1><NavLink to='/faq' className='nav-link' activeClassName='activeNav'>F&Q</NavLink></h1>
 
-            <h1><NavLink to='aboutme' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/aboutme')}>About Me</NavLink></h1>
+            <h1><NavLink to='/aboutme' className='nav-link' activeClassName='activeNav'>About Me</NavLink></h1>
 
-            <h1><NavLink to='mylist' className='nav-link' activeClassName='activeNav' onClick={() => history.push('/mylist')}>My List</NavLink></h1>
+            <h1><NavLink to='/mylist' className='nav-link' activeClassName='activeNav'>My List</NavLink></h1>
 
             <div className={`search-avatar-container ${searchClicked ? 'search--div--inputBox' : ''}`}>
                 { searchClicked ? 
@@ -56,10 +56,11 @@ function Nav(props) {
                             {/* <div className={`search-avatar-container ${searchClicked ? 'search--div--inputBox' : ''}`}></div> */}
                             <img src={blackSearchIcon} onClick={() => setSearchClicked(false)} alt="search icon" className='divS--search-icon fade-in' /> 
                             <input type="text" onSubmit={handleSearch} ref={searchVal} className='search--field' />
-                            <button className='search--submit' onClick={handleSearch}>Submit</button>
+                            <button className='search--submit' onClick={handleSearch}>√</button>
                         </>
                 : null}
-
+                
+                
                 <img onClick={() => {
 
                     if (searchClicked) setSearchClicked(false);

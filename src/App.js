@@ -67,11 +67,11 @@ function App() {
                         <Switch>
                             <Route exact path='/' render={() => <HomeScreen />} />
                             <Route path='/profile' render={() => <ProfileScreen />} />
+                            <Route path='/search/:string' render={(props) => <SearchScreen {...props} />} />
                             <Route path='/faq' render={() => <FAQ />}/>
                             <Route path='/watch/:id' render={(props) => <WatchScreen {...props} />} />
                             <Route path='/mylist' render={() => <MyList />} />
                             <Route path='/aboutme' render={() => <AboutScreen />} />
-                            <Route path='/search/:string' render={(props) => <SearchScreen {...props} />} />
                             <Route path='/error' render={() => <ErrorScreen />} />
                             <Route path='/notFound' component={notFound} />
                             <Route component={notFound} />
