@@ -1,6 +1,6 @@
 .your--fav-movies {
     height: 100vh;
-    width: 97.5vw;
+    width: 100%;
     object-fit: contain;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.57);
 }
@@ -19,7 +19,7 @@
 
 .center-preloader-onPage-myList {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     position: relative;
     left: 50vw;
     padding-top: 50vh

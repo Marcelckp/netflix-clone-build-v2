@@ -75,7 +75,15 @@
     opacity: 1;
 }
 
-.no--search--matches {
-    height: 100vh;
-    padding-top: 10%
+.no--results-found {
+    margin: auto;
+    width: 100%;
+    margin-top: 20px
+}
+
+.no-result-suggestion,
+.no--results-found ul {
+    text-align: left;
+    margin-left: 225px;
+    font-size: 15px
 }

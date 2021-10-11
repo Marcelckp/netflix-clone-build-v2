@@ -71,6 +71,9 @@
     color: white;
     cursor: pointer;
     animation: unHide 1.5s linear;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px
 }
 
 .search--div--inputBox {

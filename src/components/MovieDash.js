@@ -16,9 +16,7 @@ function MovieDash(props) {
 
     const addToMyList = (e) => {
         let mounted = true;
-        setLoading(true)
-
-        // console.log(loading);
+        setLoading(true);
         
         firebase.database().ref('Account/' + user).push(movie).then(() => {
             if (mounted) {

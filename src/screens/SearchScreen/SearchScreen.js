@@ -5,6 +5,7 @@ import apiRequest from '../../apiRequest';
 
 //components
 import Nav from '../../components/Nav';
+import MovieModal from '../../components/MovieModal/MovieModal';
 
 function SearchScreen(props) {
 
@@ -15,6 +16,8 @@ function SearchScreen(props) {
     const [initialSearch, setInitialSearch] = useState(null);
 
     const [matchedMoviesArr, setMatchedMoviesArr] = useState(null);
+
+    const [showModal, setShowModal] = useState(null);
 
     const searchString = props.match.params.string;
 
@@ -120,7 +123,12 @@ function SearchScreen(props) {
 
     const getItemsName = (movie) => {
         console.log(movie.title || movie.name || movie.original_title);
-        console.log(movie)
+        if (showModal) {
+            setShowModal(null);
+            setTimeout(() => {
+                setShowModal(movie)
+            }, 5);
+        } else setShowModal(movie)
     }
 
     console.log(initialSearch)
@@ -131,16 +139,28 @@ function SearchScreen(props) {
             { loading ? 
                 <div className="preloader center-preloader-onPage-myList"></div>
             :
-            <div onLoad={() => showMatches()} className="SearchScreen fadein">
+            <div className="SearchScreen fadein">
                 <div className='search--results-container'>
                     <h1>Search Screen</h1>
                     <p>* Results for your search *</p>
                     <input onChange={showMatches} type="text" ref={searchValuesInput} defaultValue={searchString} />
-                    <div className='movies--showcase'>
+                    <div className='movies--showcase fadein'>
                         {/* <p>this is the div for the movies </p> */}
 
                             { matchedMoviesArr && matchedMoviesArr.length === 0 ? 
-                                <h1 className='no--search--matches'>No matches were found</h1>
+                                <div className="no--results-found fadein">
+                                    <h1 className='no--search--matches'>No matches were found</h1>
+                                    <p>Your search for "{searchValuesInput.current.value}" did not have any match</p>
+                                    <br />
+                                    <p className='no-result-suggestion'>Suggestions:</p>
+                                    <br />
+                                    <ul>
+                                        <li>Try a Different Keyword</li>
+                                        <li>Looking for a movie or TV show?</li>
+                                        <li>Try using a movie or TV show title</li>
+                                        <li>Check your spelling</li>
+                                    </ul>
+                                </div>
                             : null }
 
                             { matchedMoviesArr ?
@@ -151,7 +171,19 @@ function SearchScreen(props) {
                                             backgroundPosition: 'center center'
                                         }}></div>
                                     }) 
-                                : null }
+                                : !matchedMoviesArr && !initialSearch ?<div className="no--results-found fadein">
+                                    <h1 className='no--search--matches fadein'>No matches were found</h1>
+                                    <p>Your search for "{searchValuesInput.current.value}" did not have any match</p>
+                                    <br />
+                                    <p className='no-result-suggestion'>Suggestions:</p>
+                                    <br />
+                                    <ul>
+                                        <li>Try a Different Keyword</li>
+                                        <li>Looking for a movie or TV show?</li>
+                                        <li>Try using a movie or TV show title</li>
+                                        <li>Check your spelling</li>
+                                    </ul>
+                                </div> : null}
                             
 
                             { initialSearch && !matchedMoviesArr ? 
@@ -162,12 +194,12 @@ function SearchScreen(props) {
                                             backgroundPosition: 'center center'
                                         }}></div>
                                 })
-                            :  null}
-                            
+                            : null}
                     </div>
                 </div>
             </div>
             }
+            { showModal ? <MovieModal aboutMovie={showModal} /> : null }
         </>
     )
 }
