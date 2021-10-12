@@ -81,6 +81,7 @@ function Faqform() {
                     <h1 className="faq-title">Frequently Asked Questions</h1>
 
                     <div className="faqSection" onClick={toggleDropDown1}>
+
                         <div className="question">
                             <h1>What is Netflix?</h1>
 
@@ -93,17 +94,20 @@ function Faqform() {
                                     </svg>}
                             
                         </div>
-                        {clicked1 ?
-                            <div className="faqDescription-container slide-open-animation">
-                                <p className="faqDescription-text">
-                                    Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.
-                                </p>
-                                <p className='faqDescription-text'>
-                                    You can watch as much as you want, whenever you want without a single commercial – all for one low monthly price. There's always something new to discover and new TV shows and movies are added every week!
-                                </p> 
-                            </div> : null}
+
+                        <div className={`faqDescription-container ${ clicked1 ? 'slide-open-animation' : null}`}>
+                            <p className="faqDescription-text">
+                                Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.
+                            </p>
+                            <p className='faqDescription-text'>
+                                You can watch as much as you want, whenever you want without a single commercial – all for one low monthly price. There's always something new to discover and new TV shows and movies are added every week!
+                            </p> 
+                        </div> 
+
                     </div>
+
                     <div className='faqSection' onClick={toggleDropDown2}>
+
                         <div className="question">
                             <h1>How much does Netflix cost?</h1>
                             
@@ -116,12 +120,15 @@ function Faqform() {
                                     </svg>}
 
                         </div>
-                        {clicked2 ? 
-                                <div className="faqDescription-container">
-                                    <p className="faqDescription-text">Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from R49 to R169 a month. No extra costs, no contracts.</p>
-                                </div> : null}
+
+                        <div className={`faqDescription-container ${ clicked2 ? 'slide-open-animation2' : null}`}>
+                            <p className="faqDescription-text">Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from R49 to R169 a month. No extra costs, no contracts.</p>
+                        </div>
+
                     </div>
+
                     <div className="faqSection" onClick={toggleDropDown3}>
+
                         <div className="question">
                             <h1>Is Netflix safe for kids?</h1>
                             
@@ -134,17 +141,20 @@ function Faqform() {
                                     </svg>}
 
                         </div>
-                        {clicked3 ? 
-                                <div className="faqDescription-container">
-                                    <p className="faqDescription-text">
-                                        The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and movies in their own space.
-                                    </p>
-                                    <p className="faqDescription">
-                                        Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.
-                                    </p>
-                                </div> : null}
+
+                        <div className={`faqDescription-container ${ clicked3 ? 'slide-open-animation3' : null}`}>
+                            <p className="faqDescription-text">
+                                The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and movies in their own space.
+                            </p>
+                            <p className="faqDescription">
+                                Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.
+                            </p>
+                        </div> 
+
                     </div>
+
                     <div className="faqSection" onClick={toggleDropDown4}>
+
                         <div className="question">
                             <h1>Where can i watch Netflix?</h1>
                             
@@ -157,15 +167,16 @@ function Faqform() {
                                     </svg>}
 
                         </div>
-                        {clicked4 ? 
-                                <div className="faqDescription-container">
-                                    <p className="faqDescription-text">
-                                        Watch anywhere, anytime, on an unlimited number of devices. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.
-                                    </p>
-                                    <p className="faqDescription-text">
-                                        You can also download your favorite shows with the iOS, Android, or Windows 10 app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere.
-                                    </p>
-                                </div> : null}
+
+                        <div className={`faqDescription-container ${ clicked4 ? 'slide-open-animation4' : null}`}>
+                            <p className="faqDescription-text">
+                                Watch anywhere, anytime, on an unlimited number of devices. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.
+                            </p>
+                            <p className="faqDescription-text">
+                                You can also download your favorite shows with the iOS, Android, or Windows 10 app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere.
+                            </p>
+                        </div>
+
                     </div>
                 </div>
             </div>
