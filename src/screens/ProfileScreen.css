@@ -9,12 +9,13 @@
     margin-right: auto;
     width: 50%;
     flex-direction: column;
-    padding-top: 8%;
+    padding-top: 12%;
     max-width: 800px;
 }
 
 .profileS-inform {
     display: flex;
+    margin-top: -90px
 }
 
 .profileS-inform img {
@@ -50,6 +51,23 @@
     margin-top: 5%;
     border: none;
     cursor: pointer;
+    border-radius: 5px
+}
+
+.btn--subscribe--enter {
+    padding: 5px 20px;
+    font-size: .9rem;
+    width: 30%;
+    min-width: 100px;
+    color: white;
+    background-color: #e50914;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn--subscribe--enter:hover {
+    background-color: rgb(155, 29, 29)
 }
 
 .profileS-subscribe h3 {
@@ -62,4 +80,127 @@
 
 .profileS-subscribe {
     margin-top: 20px;
+}
+
+.subscription--renewal,
+.subscription--title {
+    font-size: 15px;
+    font-weight: 250;
+}
+
+.subscription--renewal {
+    margin-top: -20px;
+}
+
+.subscription--info {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.first--div {
+    /* padding-top: 20px */
+    margin-top: 20px
+}
+
+.informational--div {
+    visibility: hidden;
+    opacity: 0;
+    fill: transparent;
+    width: 150px;
+    height: 85px;
+    /* overflow: hidden; */
+    position: relative;
+    left: -190px;
+    top: -4px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.show-info-div {
+    visibility: visible;
+    opacity: 1;
+    transition-timing-function: ease;
+    transition: all 1s ease;
+    transition: visibility 1s, opacity 1s
+}
+
+.hide-info-div {
+    visibility: hidden;
+    opacity: 0;
+    transition-timing-function: ease;
+    transition: all 1s ease;
+    transition: visibility 1s, opacity 1s
+}
+
+.informational--div::after {
+    content: " ";
+    width: 2px;
+    height: 2px;
+    border-top: 10px solid transparent;
+    border-left: 10px solid white;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    margin-top: -10px
+}
+
+.info-div-info {
+    font-size: 18px;
+    text-align: center;
+    padding: 10px
+}
+
+.edit-title {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    border-bottom: 1px solid#282c2d;
+}
+
+.username-change {
+    width: 96%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px
+}
+
+.buttons--edit-div {
+    display: flex;
+    justify-content: center;
+}
+
+.createSpace-between {
+    margin-right: 20px
+}
+
+.edit-div-buttons-func {
+    margin-top: 10px
+}
+
+.edit--profile-picture-modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.have-a-nice-weekend-Ye-SHEBAB {
+    background-color: white;
+    width: 50%;
+    height: 50%;
+    border-radius: 5px;
+}
+
+.edit--profile-picture-modal p {
+    /* width: 100%; */
+    text-align: center;
+    color: black
 }

@@ -4,7 +4,6 @@ import './Faqform.css';
 import Nav from '../components/Nav';
 
 function Faqform() {
-
     // =================================================================
 
     const [clicked1, setClicked1] = useState(false);

@@ -28,6 +28,8 @@ function MyList() {
 
     const [loading, setLoading] = useState(true);
 
+    const [loadingDelete, setLoadingDelete] = useState(null);
+
         useEffect(() => {
             let mounted = true;
             firebase.database().ref('Account/'+ user).on('value', (snapshot) => {
@@ -73,9 +75,9 @@ function MyList() {
 
     const handleRemoveEntry = (e) => {
         e.preventDefault();
-        setLoading(true);
+        setLoadingDelete(true);
         firebase.database().ref('Account/'+ user + `/${clickedMovieDataKey}`).remove().then(() => {
-            setLoading(false);
+            setLoadingDelete(false);
             setClickedMovie(null);
         })
     }
@@ -135,7 +137,7 @@ function MyList() {
                                         }}>
 
                                         <div className="dash-shader"></div>
-                                        { loading ? 
+                                        { loadingDelete ? 
                                             <div className="preloader center-preloader"></div>
                                             : <div className="movieDashInfo">
                                                 <h1>{clickedMovie.name|| clickedMovie.title||clickedMovie.original_title}</h1>
