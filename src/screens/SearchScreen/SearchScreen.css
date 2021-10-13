@@ -78,12 +78,24 @@
 .no--results-found {
     margin: auto;
     width: 100%;
-    margin-top: 20px
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .no-result-suggestion,
 .no--results-found ul {
     text-align: left;
-    margin-left: 225px;
-    font-size: 15px
+}
+
+.suggestion-result {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.no-result-suggestion {
+    margin-left: -230px
 }

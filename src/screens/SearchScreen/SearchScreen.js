@@ -57,7 +57,7 @@ function SearchScreen(props) {
         }
 
         fetchData().then(() => {
-            console.log('hi there im done calling data');
+            // console.log('hi there im done calling data');
             // console.log(movies)
 
             // console.log(allTheMovies)
@@ -131,7 +131,7 @@ function SearchScreen(props) {
         } else setShowModal(movie)
     }
 
-    console.log(initialSearch)
+    // console.log(initialSearch)
 
     return (
         <>
@@ -152,14 +152,17 @@ function SearchScreen(props) {
                                     <h1 className='no--search--matches'>No matches were found</h1>
                                     <p>Your search for "{searchValuesInput.current.value}" did not have any match</p>
                                     <br />
-                                    <p className='no-result-suggestion'>Suggestions:</p>
-                                    <br />
-                                    <ul>
-                                        <li>Try a Different Keyword</li>
-                                        <li>Looking for a movie or TV show?</li>
-                                        <li>Try using a movie or TV show title</li>
-                                        <li>Check your spelling</li>
-                                    </ul>
+
+                                    <div className="suggestion-result">
+                                        <p className='no-result-suggestion'>Suggestions:</p>
+                                        <br />
+                                        <ul>
+                                            <li>Try a Different Keyword</li>
+                                            <li>Looking for a movie or TV show?</li>
+                                            <li>Try using a movie or TV show title</li>
+                                            <li>Check your spelling</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             : null }
 
@@ -171,19 +174,25 @@ function SearchScreen(props) {
                                             backgroundPosition: 'center center'
                                         }}></div>
                                     }) 
-                                : !matchedMoviesArr && !initialSearch ?<div className="no--results-found fadein">
-                                    <h1 className='no--search--matches fadein'>No matches were found</h1>
-                                    <p>Your search for "{searchValuesInput.current.value}" did not have any match</p>
-                                    <br />
-                                    <p className='no-result-suggestion'>Suggestions:</p>
-                                    <br />
-                                    <ul>
-                                        <li>Try a Different Keyword</li>
-                                        <li>Looking for a movie or TV show?</li>
-                                        <li>Try using a movie or TV show title</li>
-                                        <li>Check your spelling</li>
-                                    </ul>
-                                </div> : null}
+                                : null }
+                                {initialSearch &&initialSearch.length === 0 && !matchedMoviesArr ? 
+                                    <div className="no--results-found fadein">
+                                        <h1 className='no--search--matches'>No matches were found</h1>
+                                        <p>Your search for "{searchValuesInput.current.value}" did not have any match</p>
+                                        <br />
+
+                                        <div className="suggestion-result">
+                                            <p className='no-result-suggestion'>Suggestions:</p>
+                                            <br />
+                                            <ul>
+                                                <li>Try a Different Keyword</li>
+                                                <li>Looking for a movie or TV show?</li>
+                                                <li>Try using a movie or TV show title</li>
+                                                <li>Check your spelling</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                : null}
                             
 
                             { initialSearch && !matchedMoviesArr ? 
