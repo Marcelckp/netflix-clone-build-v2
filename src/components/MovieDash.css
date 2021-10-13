@@ -6,6 +6,16 @@
     height: 500px;
 }
 
+.movieDash-mylist {
+    object-fit: contain;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 500px;
+    height: auto;
+    padding-bottom: 20px;
+    min-height: 500px
+}
+
 .show--down {
     max-height: 500px;
     transition: max-height 0.25s ease-in;

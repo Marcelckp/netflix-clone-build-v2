@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { selectUser } from '../features/userSlice';
 
 function MovieDash(props) {
-    // console.log(props.class)
+    
     const [loading, setLoading] = useState(false);
     // const [movieKey, setMovieKey] = useState(0);
 

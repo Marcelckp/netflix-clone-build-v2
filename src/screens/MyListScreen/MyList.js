@@ -129,7 +129,7 @@ function MyList() {
                                 })}
                             </div>
                             { clickedMovie ? 
-                                    <div className={`movieDash ${classToggle ? 'fadein' : 'fade'}`}
+                                    <div className={`movieDash-mylist ${classToggle ? 'fadein' : 'fade'}`}
                                         style={{
                                             backgroundSize: 'cover',
                                             backgroundImage: `url('https://image.tmdb.org/t/p/original/${clickedMovie.backdrop_path}')`,

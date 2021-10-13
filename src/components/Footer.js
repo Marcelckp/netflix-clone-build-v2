@@ -4,7 +4,7 @@ import './Footer.css';
 function Footer() {
     return (
         <div className="Footer-section">
-            <div className="icons">
+            <div className="icons-splash">
                 <a href="https://www.linkedin.com/in/marcel-palmer-b4bba4212/" target='_blank' rel='noreferrer'><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/640px-LinkedIn_icon.svg.png" alt="linked icon" /></a>
                 
                 <a href="https://github.com/Marcelckp" target='_blank' rel='noreferrer'><img src="https://www.sferalabs.cc/wp-content/uploads/github-logo-white-700x465.png" alt="Github icon" /></a>

@@ -1,5 +1,6 @@
 .profile-screen {
-    height: 100vh;
+    /* height: 100vh; */
+    margin-bottom: 40px;
     color: white;
 }
 
@@ -8,6 +9,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+    min-height: 100vh;
     flex-direction: column;
     padding-top: 12%;
     max-width: 800px;
@@ -19,7 +21,12 @@
 }
 
 .profileS-inform img {
-    height: 100px
+    height: 100px;
+    width: 100px;
+    min-height: 100px;
+    min-width: 100px;
+    overflow: hidden;
+    object-fit: cover;
 }
 
 .profileS-body h1 {
@@ -70,6 +77,10 @@
     background-color: rgb(155, 29, 29)
 }
 
+.increase-btn-width-pfp {
+    width: 100%
+}
+
 .profileS-subscribe h3 {
     border-bottom: 1px solid #282c2d;
     padding-bottom: 10px;
@@ -112,7 +123,7 @@
     /* overflow: hidden; */
     position: relative;
     left: -190px;
-    top: -4px;
+    top: 3px;
     border: 2px solid white;
     border-radius: 5px;
 }
@@ -157,10 +168,11 @@
     margin-bottom: 10px;
     margin-top: 20px;
     border-bottom: 1px solid#282c2d;
+    /* text-align: center; */
 }
 
 .username-change {
-    width: 96%;
+    width: 95.3%;
     margin-top: 10px;
     padding: 10px;
     border: none;
@@ -170,10 +182,16 @@
 .buttons--edit-div {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px
 }
 
 .createSpace-between {
     margin-right: 20px
+}
+
+.edit--imageProfile--btnDiv {
+    display: flex;
+    justify-content: center;
 }
 
 .edit-div-buttons-func {
@@ -193,14 +211,60 @@
 }
 
 .have-a-nice-weekend-Ye-SHEBAB {
-    background-color: white;
+    background-color: #111;
     width: 50%;
-    height: 50%;
+    height: auto;
     border-radius: 5px;
+    z-index: 5;
 }
 
 .edit--profile-picture-modal p {
     /* width: 100%; */
     text-align: center;
-    color: black
+    color: white
+}
+
+.cam-svg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 15%;
+    height: 70%;
+    width: 70%;
+    object-fit: contain;
+    overflow: hidden;
+    border: 1px solid grey
+}
+
+.camera--icon-edit {
+    position: relative;
+    width: 100px;
+    height: 100px
+}
+
+.profileImage-edit {
+    margin-top: -20px;
+    object-fit: contain;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.cancel-button-div-edit {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-bottom: 20px
+}
+
+.edit-profile-img-title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px
+}
+
+.error-message-edit {
+    color: red
 }

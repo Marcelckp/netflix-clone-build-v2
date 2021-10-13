@@ -1,63 +1,70 @@
-.Footer-link-container {
-    column: 4;
-    -webkit-columns: 4;
-    -moz-columns: 4;
-    padding-top: 70px;
-    max-width: 100vw;
-    margin: auto;
-    text-align: left;
-    list-style-type: none;
-    font-size: 14px;
-}
-
-.footer-wrapper {
-    margin-bottom: 10px;
-}
-
-.footer-link {
-    color: rgb(185, 184, 184);
-    text-decoration: none;
-}
-
-.footer-link:hover {
-    color: white;
-    text-decoration: underline;
-    -webkit-transition: color 300ms linear;
-    -ms-transition: color 300ms linear;
-    transition: color 300ms linear
-}
-
-.Footer-section h3 {
-    color: rgb(185, 184, 184);
-    font-size: 14px;
-    margin-top: 20px;
-    margin-left: 40px;
-    max-width: 87px;
-    padding: 8px;
-    border: 1px solid rgb(185, 184, 184);
-}
-
-.Footer-section h3:hover {
-    color: white;
-    border-color: white;
-    -webkit-transition: color 450ms linear;
-    -ms-transition: color 450ms linear;
-    transition: color 450ms linear
-}
-
-.Footer-section p {
-    color: rgb(185, 184, 184);
-    font-size: 11px;
-    margin-left: 40px;
-    padding-bottom: 20px
-}
-
-.icons img {
-    object-fit: contain;
-    height: 30px;
-    position: relative;
-    left: 37px;
-    top: 50px;
-    cursor: pointer;
-    margin-right: 20px;
-}
+    .Footer-link-container {
+        column: 4;
+        -webkit-columns: 4;
+        -moz-columns: 4;
+        padding-top: 70px;
+        max-width: 100vw;
+        margin: auto;
+        text-align: left;
+        list-style-type: none;
+        font-size: 14px;
+    }
+    
+    .Footer-section {
+        z-index: 0;
+        margin-top: 20px
+    }
+    
+    .footer-wrapper {
+        margin-bottom: 10px;
+    }
+    
+    .footer-link {
+        color: rgb(185, 184, 184);
+        text-decoration: none;
+    }
+    
+    .footer-link:hover {
+        color: white;
+        text-decoration: underline;
+        -webkit-transition: color 300ms linear;
+        -ms-transition: color 300ms linear;
+        transition: color 300ms linear
+    }
+    
+    .Footer-section h3 {
+        color: rgb(185, 184, 184);
+        font-size: 14px;
+        margin-top: 20px;
+        margin-left: 40px;
+        max-width: 87px;
+        padding: 8px;
+        border: 1px solid rgb(185, 184, 184);
+    }
+    
+    .Footer-section h3:hover {
+        color: white;
+        border-color: white;
+        -webkit-transition: color 450ms linear;
+        -ms-transition: color 450ms linear;
+        transition: color 450ms linear
+    }
+    
+    .Footer-section p {
+        color: rgb(185, 184, 184);
+        font-size: 11px;
+        margin-left: 40px;
+        padding-bottom: 20px
+    }
+    
+    .icons-splash {
+        display: flex;
+        /* justify-content: start; */
+    }
+    
+    .icons-splash img {
+        object-fit: contain;
+        height: 30px;
+        cursor: pointer;
+        margin-left: 20px;
+    }

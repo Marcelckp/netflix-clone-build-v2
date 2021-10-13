@@ -29,8 +29,11 @@
     position: fixed;
     right: 20px;
     width: 30px;
-    object-fit: contain;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .search-avatar {
